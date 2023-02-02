@@ -1,0 +1,54 @@
+---
+import { t, changeLanguage } from "i18next";
+
+changeLanguage("uk");
+
+const getWeekDay = (date: Date) => {
+	const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+	return t(days[date.getDay()]);
+}
+
+const formatNumber = (num: number) => {
+	return num.toString().padStart(2, "0");
+}
+
+export interface Props {
+	event: IEvent;
+}
+
+interface IEvent {
+	id: string;
+	date: string;
+	time: string;
+	location: string;
+	title: string;
+}
+
+const { event } = Astro.props;
+const date = new Date(event.date);
+const eventDate = `${formatNumber(date.getDate())}.${formatNumber(date.getUTCMonth()+1)}`;
+---
+<p class="instructions">
+	<code>{eventDate}, {getWeekDay(date)}, {event.time}</code> - {event.title} <strong>{event.location}</strong>.
+</p>
+<style>
+	.instructions {
+		line-height: 1.6;
+		margin: 1rem 0;
+		border: 1px solid rgba(var(--accent), 25%);
+		background-color: white;
+		padding: 1rem;
+		border-radius: 0.4rem;
+	}
+	.instructions code {
+		font-size: 0.875em;
+		font-weight: bold;
+		background: rgba(var(--accent), 12%);
+		color: rgb(var(--accent));
+		border-radius: 4px;
+		padding: 0.3em 0.45em;
+	}
+	.instructions strong {
+		color: rgb(var(--accent));
+	}
+</style>

@@ -1,7 +1,10 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import { changeLanguage } from "i18next";
+import Layout from "../layouts/Layout.astro";
 
-const donationsUrl = "https://nice-tree-01b276300.2.azurestaticapps.net/"
+changeLanguage("uk");
+
+const donationsUrl = "https://nice-tree-01b276300.2.azurestaticapps.net/";
 ---
 
 <Layout title="Dubai Open Club - culture evenings.">

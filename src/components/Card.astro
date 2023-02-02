@@ -3,13 +3,14 @@ export interface Props {
 	title: string;
 	body: string;
 	href: string;
+	disabled?: boolean;
 }
 
-const { href, title, body } = Astro.props;
+const { href, title, body, disabled = false } = Astro.props;
 ---
 
-<li class="link-card">
-	<a href={href}>
+<li class={disabled ? 'link-card-disabled' : 'link-card'}>
+	{disabled && <div>
 		<h2>
 			{title}
 			<span>&rarr;</span>
@@ -17,10 +18,19 @@ const { href, title, body } = Astro.props;
 		<p>
 			{body}
 		</p>
-	</a>
+	</div>}
+	{!disabled && <a href={href}>
+		<h2>
+			{title}
+			<span>&rarr;</span>
+		</h2>
+		<p>
+			{body}
+		</p>
+	</a>}
 </li>
 <style>
-	.link-card {
+	.link-card, .link-card-disabled {
 		list-style: none;
 		display: flex;
 		padding: 0.15rem;
@@ -32,8 +42,11 @@ const { href, title, body } = Astro.props;
 		transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 		box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
 	}
+	.link-card-disabled {
+		opacity: 0.5;
+	}
 
-	.link-card > a {
+	.link-card > a, .link-card-disabled > div {
 		width: 100%;
 		text-decoration: none;
 		line-height: 1.4;

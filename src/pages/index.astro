@@ -1,38 +1,52 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import { t, changeLanguage } from "i18next";
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import dataJson from "../data/calendar.json";
+import CalendarEntry from "../components/CalendarEntry.astro";
+
+changeLanguage("uk");
 ---
 
-<Layout title="Dubai Open Club - socialization platform for ukranians.">
+<Layout title={t("site.title")}>
 	<main>
-		<h1>Welcome to <span class="text-gradient">Dubai Open Club</span></h1>
+		<h1><span class="text-gradient">Dubai Open Club</span></h1>
 		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
+			{t("home.intro.part1")} <strong>{t("home.intro.part2")}</strong>!<br />
+			{t("home.intro.part3")}
 		</p>
 		<ul role="list" class="link-card-grid">
-			<a href="culture">Culture Evening</a>
 			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
+				href="mafia"
+				title={t("home.mafiaCard.title")}
+				body={t("home.mafiaCard.body")}
 			/>
 			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
+				href="cashflow"
+				title={t("home.cashflowCard.title")}
+				body={t("home.cashflowCard.body")}
 			/>
 			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
+				disabled={true}
+				href="cinemaclub"
+				title={t("home.cinemaClubCard.title")}
+				body={t("home.cinemaClubCard.body")}
 			/>
 			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
+				href="culture"
+				title={t("home.cultureCard.title")}
+				body={t("home.cultureCard.body")}
 			/>
 		</ul>
+		<hr />
+		<h2>{t("home.calendarTitle")}</h2>
+		{dataJson.filter(x => (Date.now()) < new Date(x.date).getTime()).map((event) => (
+			<CalendarEntry event={event} />
+		))}
+		<h5>{t("home.calendarOld")}</h5>
+		{dataJson.filter(x => Date.now() >= new Date(x.date).getTime()).map((event) => (
+			<CalendarEntry event={event} />
+		))}
 	</main>
 </Layout>
 
