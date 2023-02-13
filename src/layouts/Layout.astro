@@ -21,7 +21,7 @@ const { title, isNoFooter = false } = Astro.props;
 	</head>
 	<body>
 		<slot />
-		{!isNoFooter && (<footer>Built with 💙 by <a href="https://github.com/letier3110">letier</a></footer>)}
+		{!isNoFooter && (<footer>Built with <a class="nolink" href="/admin💙">💙</a> by <a href="https://github.com/letier3110">letier</a></footer>)}
 	</body>
 </html>
 <style is:global>
@@ -48,5 +48,9 @@ const { title, isNoFooter = false } = Astro.props;
 		border-radius: 0.35rem;
 		color: #111;
 		opacity: 0.8;
+	}
+	.nolink {
+		font-size: 24px;
+		text-decoration: none;
 	}
 </style>
