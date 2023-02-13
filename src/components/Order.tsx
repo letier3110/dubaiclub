@@ -100,7 +100,7 @@ export const Order: FC<OrderProps> = ({ order, shared = true, navigate, updateOr
           </h5>
         </div>
       </div>
-      {shared && <QRCode value={'/somevalue'} />}
+      {shared && <QRCode value={`https://dubaiopen.club/order?id=${name}`} />}
       {shared && (
         <div className='flex flex-wrap gap-2'>
           {menuData.map((x) => {

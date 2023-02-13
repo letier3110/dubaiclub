@@ -42,7 +42,7 @@ export const AdminReact: FC = () => {
   // @ts-ignore
   const sharedId = params.id ?? null // "some_value"
 
-  const [loggedIn, setLoggedIn] = useState(true)
+  const [loggedIn, setLoggedIn] = useState(false)
   const [inOrders, setInOrders] = useState(true)
   const [showOrder, setShowOrder] = useState<OrderItem | null>(null)
   const [orders, setOrders] = useState<OrderItem[]>(mockData)
