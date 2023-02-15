@@ -15,57 +15,41 @@ const TELEGRAM_URL = 'https://t.me/chatdubaiopenclub'
 changeLanguage('uk')
 ---
 
-<Layout title={t("site.title")}>
-	<main>
-		<div class='header'>
+<Layout title={t('site.title')}>
+  <main>
+    <div class='header'>
       <h1><span class='text-gradient'>Dubai Open Club</span></h1>
-      <div class="socialContainer">
-				<a class='social' href={TELEGRAM_URL} target='_blank' rel='noreferrer'>
-					<img src={telegram} alt='telegram' />
-				</a>
-				<!-- <a class='social' href={INSTAGRAM_URL} target='_blank' rel='noreferrer'>
+      <div class='socialContainer'>
+        <a class='social' href={TELEGRAM_URL} target='_blank' rel='noreferrer'>
+          <img src={telegram} alt='telegram' />
+        </a>
+        <!-- <a class='social' href={INSTAGRAM_URL} target='_blank' rel='noreferrer'>
 					<img src={instagram} alt='instagram' />
 				</a> -->
-			</div>
+      </div>
     </div>
-		<p class="instructions">
-			{t("home.intro.part1")} <strong>{t("home.intro.part2")}</strong>!<br />
-			{t("home.intro.part3")}
-		</p>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="mafia"
-				title={t("home.mafiaCard.title")}
-				body={t("home.mafiaCard.body")}
-			/>
-			<Card
-				href="cashflow"
-				title={t("home.cashflowCard.title")}
-				body={t("home.cashflowCard.body")}
-			/>
-			<Card
-				disabled={true}
-				href="cinemaclub"
-				title={t("home.cinemaClubCard.title")}
-				body={t("home.cinemaClubCard.body")}
-			/>
-			<Card
-				disabled={true}
-				href="culture"
-				title={t("home.cultureCard.title")}
-				body={t("home.cultureCard.body")}
-			/>
-		</ul>
-		<hr />
-		<h2>{t("home.calendarTitle")}</h2>
-		{dataJson.filter(x => (Date.now()) < new Date(x.date).getTime()).map((event) => (
-			<CalendarEntry event={event} />
-		))}
-		<h5>{t("home.calendarOld")}</h5>
-		{dataJson.filter(x => Date.now() >= new Date(x.date).getTime()).map((event) => (
-			<CalendarEntry event={event} />
-		))}
-	</main>
+    <p class='instructions'>
+      {t('home.intro.part1')}
+      <strong>{t('home.intro.part2')}</strong>!<br />
+      {t('home.intro.part3')}
+    </p>
+    <ul role='list' class='link-card-grid'>
+      <Card href='mafia' title={t('home.mafiaCard.title')} body={t('home.mafiaCard.body')} />
+      <Card href='cashflow' title={t('home.cashflowCard.title')} body={t('home.cashflowCard.body')} />
+      <Card
+        disabled={true}
+        href='cinemaclub'
+        title={t('home.cinemaClubCard.title')}
+        body={t('home.cinemaClubCard.body')}
+      />
+      <Card disabled={true} href='culture' title={t('home.cultureCard.title')} body={t('home.cultureCard.body')} />
+    </ul>
+    <hr />
+    <h2>{t('home.calendarTitle')}</h2>
+    {dataJson.filter((x) => Date.now() < new Date(x.date).getTime()).map((event) => <CalendarEntry event={event} />)}
+    <h5>{t('home.calendarOld')}</h5>
+    {dataJson.filter((x) => Date.now() >= new Date(x.date).getTime()).map((event) => <CalendarEntry event={event} />)}
+  </main>
 </Layout>
 
 <style>
@@ -79,21 +63,21 @@ changeLanguage('uk')
     font-weight: 800;
     margin: 0;
   }
-	.socialContainer {
-		display: flex;
-		gap: 12px;
-	}
+  .socialContainer {
+    display: flex;
+    gap: 12px;
+  }
   .social {
     background-color: #fff;
 
-		width: 48px;
-		height: 48px;
-		border: 1px solid black;
-		border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    border: 1px solid black;
+    border-radius: 50%;
 
     display: flex;
     align-items: center;
-		justify-content: center;
+    justify-content: center;
   }
   .header {
     display: flex;

@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Вхідний білет",
+    "price": "50",
+    "description": "Мафія клуб",
+    "image": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/6662f41240543.5897921099b80.jpg"
+  },
+  {
+    "name": "Корона пиво",
+    "price": "50",
+    "description": "Корона пиво",
+    "image": "https://tl-family.com/wp-content/uploads/2021/01/pivo-Corona-Extra.jpg"
+  },
+  {
+    "name": "Вино біле",
+    "price": "45",
+    "description": "Вино біле (бокал)",
+    "image": "https://jamones.com.ua/image/cache/catalog/vinoz/80-500x500.jpg"
+  },
+  {
+    "name": "Вино червоне",
+    "price": "45",
+    "description": "Вино червоне (бокал)",
+    "image": "https://winewine.com.ua/wp-content/uploads/2020/12/arpepe-il-pettirosso-valtellina-superiore.jpg"
+  },
+  {
+    "name": "Пельмені",
+    "price": "25",
+    "description": "Пельмені з мʼясом (порція)",
+    "image": "https://smak.ua/i/75/91/0/75910/image_main/e9473057a69d4b01ca3e1caeeaeb848e-resize_crop_1Xquality_100Xallow_enlarge_0Xw_1200Xh_630.jpg"
+  },
+  {
+    "name": "Вареники з вишнею",
+    "price": "25",
+    "description": "Вареники (порція)",
+    "image": "https://images.unian.net/photos/2020_07/1595919237-6638.jpg?0.19634984403781552"
+  },
+  {
+    "name": "Вареники з картоплею",
+    "price": "27",
+    "description": "Вареники (порція)",
+    "image": "https://sensatsiya.com/wp-content/uploads/2020/10/imgonline-com-ua-resize-xncczghcmogztf-900x525.jpg"
+  }
+]

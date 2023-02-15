@@ -1,39 +1,27 @@
 ---
 import { t, changeLanguage } from 'i18next'
+import { AdminReact } from '../components/AdminReact';
+import { Login } from '../components/Login'
 import Layout from '../layouts/Layout.astro'
-import Card from '../components/Card.astro'
 
 changeLanguage('uk')
+
+// const data = await fetch('http://0.0.0.0:8000/login', {
+//   headers: {
+//     'Content-Type': 'application/json',
+//     Accept: 'application/json'
+//   },
+//   method: 'POST',
+//   body: JSON.stringify({
+//     name: 'Astro',
+//     password: '12345'
+//   })
+// }).then((res) => res.json());
+// console.log(data)
 ---
 
-<Layout title={t('site.title')}>
-  <main>
-    <h1>
-      <a class='header-link' href='/'>
-        <span class='text-gradient'><span>&larr;</span>{t('mafia.title')}</span>
-      </a>
-    </h1>
-    <p class='instructions'>
-      {t('mafia.format')}
-      <br /><br />
-      {t('mafia.part1')}
-      <br /><br />
-      {t('mafia.part2')}
-      <br /><br />
-      {t('mafia.part3')}
-      <br /><br />
-      {t('mafia.part4')}
-      <br /><br />
-      {t('mafia.part5')}
-      <br /><br />
-      {t('mafia.part6')}
-    </p>
-    <p class='instructions'>
-      {t('mafia.locationTitle')}
-      <br /><br />
-      <a href={t('mafia.locationUrl')}>{t('mafia.locationUrl')}</a>
-    </p>
-  </main>
+<Layout title={t('site.title')} isNoFooter={true}>
+  <AdminReact client:only />
 </Layout>
 
 <style>
