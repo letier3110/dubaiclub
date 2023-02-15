@@ -1,25 +1,32 @@
 [
   {
+    "id": "14",
+    "date": "2023-02-17",
+    "time": "19:00",
+    "location": "Dubai Open Club",
+    "title": "Мафія в"
+  },
+  {
     "id": "13",
     "date": "2023-02-10",
     "time": "19:00",
     "location": "Dubai Open Club",
     "title": "Мафія в"
   },
-{
+  {
     "id": "12",
     "date": "2023-02-09",
     "time": "19:00",
     "location": "Dubai Open Club",
     "title": "Кешфлоу в"
   },
-{
-"id":"11",
-"date": "2023-02-05",
-"time":"16:00",
-"location":"Dubai Open Club",
-"title":"Кешфлоу в"
-},
+  {
+    "id": "11",
+    "date": "2023-02-05",
+    "time": "16:00",
+    "location": "Dubai Open Club",
+    "title": "Кешфлоу в"
+  },
   {
     "id": "10",
     "date": "2023-02-04",
