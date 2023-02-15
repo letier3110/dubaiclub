@@ -79,6 +79,9 @@ export const AdminReact: FC = () => {
         dishes: JSON.stringify(dishes)
       })
     })
+    if(loggedIn) {
+      handleLoadOrders(loggedIn);
+    }
   }
 
   const handleLoadOrders = async (loggedIn: string) => {
