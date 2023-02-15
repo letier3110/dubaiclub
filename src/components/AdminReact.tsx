@@ -76,7 +76,7 @@ export const AdminReact: FC = () => {
       },
       body: JSON.stringify({
         name,
-        dishes
+        dishes: JSON.stringify(dishes)
       })
     })
   }
