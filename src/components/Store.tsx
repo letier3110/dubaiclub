@@ -106,31 +106,35 @@ export const Store: FC<StoreProps> = ({ submitOrder }) => {
         <div className='flex flex-wrap gap-2'>
           {menuData.map((x) => {
             return (
-              <div key={x.name} className='flex flex-wrap'>
-                <div className='flex justify-center'>
-                  <div className='block p-6 rounded-lg shadow-lg bg-white max-w-sm'>
-                    <h5 className='text-gray-900 text-xl leading-tight font-medium mb-2'>
-                      {x.name} - {x.price}aed
-                    </h5>
-                    <div className='w-full p-1 md:p-2'>
-                      <img
-                        alt='gallery'
-                        className='block object-cover object-center w-full h-full rounded-lg'
-                        src={x.image}
-                      />
-                    </div>
-                    <p className='text-gray-700 text-base mb-4'>{x.description.substring(0, 100)}</p>
-                    <button
-                      type='button'
-                      className=' inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out'
-                      onClick={() => {
-                        setDishes([...dishes, { name: x.name, price: Number.parseInt(x.price) }])
-                      }}
-                    >
-                      Додати
-                    </button>
-                  </div>
+              <div
+                key={x.name}
+                style={{
+                  width: '240px',
+                  minWidth: '240px',
+                  height: '340px',
+                  backgroundImage: `url(${x.image})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center'
+                }}
+                className='flex flex-col justify-between p-6 rounded-lg shadow-lg bg-white max-w-sm relative'
+              >
+                <div className='w-full p-1 md:p-2 rounded-lg' style={{
+                  backgroundColor: 'rgba(255, 255, 255, 0.8)'
+                }}>
+                  <h5 className='text-gray-900 text-xl leading-tight font-medium mb-2 '>
+                    {x.name} - {x.price}aed
+                    <p className='text-gray-700 text-base mb-4 '>{x.description.substring(0, 100)}</p>
+                  </h5>
                 </div>
+                <button
+                  type='button'
+                  className=' inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out'
+                  onClick={() => {
+                    setDishes([...dishes, { name: x.name, price: Number.parseInt(x.price) }])
+                  }}
+                >
+                  Додати
+                </button>
               </div>
             )
           })}
