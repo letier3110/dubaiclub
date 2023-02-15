@@ -9,6 +9,7 @@ interface StoreProps {
 export const Store: FC<StoreProps> = ({ submitOrder }) => {
   const [orderName, setOrderName] = useState('')
   const [dishes, setDishes] = useState<DishItem[]>([])
+  const [collapsed, setCollapsed] = useState(true)
 
   const uniqueDishesWithCount = dishes.reduce<Array<DishItem & { count: number }>>((acc, dish) => {
     const found = acc.find((x) => x.name === dish.name)
@@ -41,50 +42,64 @@ export const Store: FC<StoreProps> = ({ submitOrder }) => {
             </button>
           </div>
           {uniqueDishesWithCount.length > 0 && (
-            <div className='flex flex-wrap gap-2'>
-              <h5 className='text-gray-900 text-xl leading-tight font-medium mb-2'>Чек</h5>
-            </div>
-          )}
-          {uniqueDishesWithCount.length > 0 && (
-            <div className='flex flex-col gap-2'>
-              {uniqueDishesWithCount.map((x) => {
-                return (
-                  <div key={x.name} className='flex'>
-                    <div className='flex justify-center'>
-                      <div className='block p-6 rounded-lg shadow-lg bg-white max-w-sm flex flex-row gap-2 align-center'>
-                        <h5 className='text-gray-700 text-md leading-tight font-medium mb-2'>
-                          {x.name} - {x.price}aed <span className='text-gray-900 text-xl text-base'>x{x.count}</span>
-                        </h5>
-                        <button
-                          type='button'
-                          className='inline-block px-6 py-2.5 bg-red-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out'
-                          onClick={() => {
-                            const found = dishes.find((y) => y.name === x.name)
-                            if (found) {
-                              const index = dishes.indexOf(found)
-                              dishes.splice(index, 1)
-                              setDishes([...dishes])
-                            }
-                          }}
-                        >
-                          Видалити 1
-                        </button>
+            <div className='mt-6'>
+              <div className='flex flex-row justify-between'>
+                <h5 className='text-gray-900 text-xl leading-tight font-medium mb-2'>
+                  Чек{' '}
+                  {uniqueDishesWithCount.reduce((acc, x) => {
+                    return acc + x.price * x.count
+                  }, 0)}
+                  aed
+                </h5>
+                {collapsed && (
+                  <button
+                    type='button'
+                    className=' inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out'
+                    onClick={() => setCollapsed(false)}
+                  >
+                    Розгорнути
+                  </button>
+                )}
+                {!collapsed && (
+                  <button
+                    type='button'
+                    className=' inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out'
+                    onClick={() => setCollapsed(true)}
+                  >
+                    Згорнути
+                  </button>
+                )}
+              </div>
+              {!collapsed && (
+                <div className='flex flex-row gap-2 flex-wrap'>
+                  {uniqueDishesWithCount.map((x) => {
+                    return (
+                      <div key={x.name} style={{ minWidth: '240px', width: '240px' }} className='flex'>
+                        <div className='w-80 block p-6 rounded-lg shadow-lg bg-white max-w-sm flex flex-col gap-2 align-center relative'>
+                          <h5 className='text-gray-700 text-md leading-tight font-medium mb-2'>
+                            {x.name} - {x.price}aed
+                          </h5>
+                          <span className='text-gray-900 text-xl text-base absolute right-0 top-0'>x{x.count}</span>
+                          <button
+                            type='button'
+                            className='inline-block px-6 py-2.5 bg-red-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out'
+                            onClick={() => {
+                              const found = dishes.find((y) => y.name === x.name)
+                              if (found) {
+                                const index = dishes.indexOf(found)
+                                dishes.splice(index, 1)
+                                setDishes([...dishes])
+                              }
+                            }}
+                          >
+                            Видалити 1
+                          </button>
+                        </div>
                       </div>
-                    </div>
-                  </div>
-                )
-              })}
-            </div>
-          )}
-          {uniqueDishesWithCount.length > 0 && (
-            <div className='flex flex-wrap gap-2 mt-2'>
-              <h5 className='text-gray-900 text-xl leading-tight font-medium mb-2'>
-                Всього:{' '}
-                {uniqueDishesWithCount.reduce((acc, x) => {
-                  return acc + x.price * x.count
-                }, 0)}
-                aed
-              </h5>
+                    )
+                  })}
+                </div>
+              )}
             </div>
           )}
         </div>
