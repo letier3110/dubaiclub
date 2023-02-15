@@ -76,7 +76,7 @@ export const AdminReact: FC = () => {
       },
       body: JSON.stringify({
         name,
-        dishes: JSON.stringify(dishes)
+        dishes
       })
     })
     if(loggedIn) {
@@ -92,7 +92,7 @@ export const AdminReact: FC = () => {
       }
     }).then((res) => res.json())
     console.log(res)
-    setOrders(res.map((x: any) => ({ name: x.name, dishes: JSON.parse(x.dishes) })))
+    setOrders(res.map((x: any) => ({ name: x.name, dishes: x.dishes })))
   }
 
   const resetOrderSelection = () => {
