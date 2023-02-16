@@ -102,7 +102,7 @@ export const Order: FC<OrderProps> = ({ order, shared = true, navigate, updateOr
           </h5>
         </div>
       </div>
-      {shared && <div className='mt-8 mb-8'><QRCode value={`https://dubaiopen.club/order?id=${name}`} /></div>}
+      {shared && <div className='mt-8 mb-8'><QRCode value={`https://dubaiopen.club/admin💙?id=${encodeURIComponent(name)}`} /></div>}
       {shared && (
         <div className='flex flex-wrap gap-2'>
           {menuData.map((x) => {

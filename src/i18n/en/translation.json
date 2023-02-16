@@ -4,7 +4,7 @@
     "login": "Login",
     "signin": "Sign in",
     "name": "Name",
-    "password": "Sign in"
+    "password": "Password"
   },
   "admin": {
     "newOrder": "New order",

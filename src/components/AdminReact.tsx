@@ -42,7 +42,7 @@ export const AdminReact: FC = () => {
     get: (searchParams, prop) => searchParams.get(prop.toString())
   })
   // @ts-ignore
-  const sharedId = params.id ?? null
+  const sharedId = decodeURIComponent(params.id ?? '')
 
   const [loggedIn, setLoggedIn] = useState<null | string>(null)
   const [inOrders, setInOrders] = useState(true)
@@ -50,8 +50,8 @@ export const AdminReact: FC = () => {
   const [orders, setOrders] = useState<OrderItem[]>([])
 
   useEffect(() => {
-    if(loggedIn) {
-      handleLoadOrders(loggedIn);
+    if (loggedIn) {
+      handleLoadOrders(loggedIn)
     }
   }, [loggedIn])
 
@@ -81,8 +81,8 @@ export const AdminReact: FC = () => {
         dishes
       })
     })
-    if(loggedIn) {
-      handleLoadOrders(loggedIn);
+    if (loggedIn) {
+      handleLoadOrders(loggedIn)
     }
   }
 
@@ -106,7 +106,7 @@ export const AdminReact: FC = () => {
 
     setLoggedIn(password)
   }
-  if (sharedId) {
+  if (sharedId && sharedId !== '') {
     const order = orders.find((order) => order.name === sharedId)
     if (order) {
       return (
@@ -143,9 +143,7 @@ export const AdminReact: FC = () => {
       <section className='h-screen'>
         <div className='flex flex-start items-center flex-col pt-3'>
           <h1>{inOrders ? t('admin.orders') : t('admin.newOrder')}</h1>
-          {inOrders && (
-            <Orders orders={orders} navigate={goInStore} onClick={(item) => setShowOrder(item)} />
-          )}
+          {inOrders && <Orders orders={orders} navigate={goInStore} onClick={(item) => setShowOrder(item)} />}
           {!inOrders && <Store submitOrder={submitOrder} />}
         </div>
       </section>
