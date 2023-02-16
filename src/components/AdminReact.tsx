@@ -47,7 +47,7 @@ export const AdminReact: FC = () => {
   const [loggedIn, setLoggedIn] = useState<null | string>(null)
   const [inOrders, setInOrders] = useState(true)
   const [showOrder, setShowOrder] = useState<OrderItem | null>(null)
-  const [orders, setOrders] = useState<OrderItem[]>(mockData)
+  const [orders, setOrders] = useState<OrderItem[]>([])
 
   useEffect(() => {
     if(loggedIn) {
