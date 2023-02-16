@@ -1,37 +1,14 @@
 ---
 import { t, changeLanguage } from "i18next";
-import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
-import { LanguageSelector } from 'astro-i18next/components'
+import { AdminReact } from "../../components/AdminReact";
+import { Login } from "../../components/Login";
+import Layout from "../../layouts/Layout.astro";
+
+changeLanguage("en");
 ---
 
-<Layout title={t('site.title')}>
-  <LanguageSelector showFlag={true} class='my-select-class' />
-  <main>
-    <h1>
-      <a class='header-link' href='/'>
-        <span class='text-gradient'><span>&larr;</span>{t('cashflow.title')}</span>
-      </a>
-    </h1>
-    <p class='instructions'>
-      {t('cashflow.format')}
-      <br /><br />
-      {t('cashflow.part1')}
-      <br /><br />
-      {t('cashflow.part2')}
-      <br /><br />
-      {t('cashflow.part3')}
-      <br /><br />
-      {t('cashflow.part4')}
-      <br /><br />
-      {t('cashflow.part5')}
-    </p>
-    <p class='instructions'>
-      {t('cashflow.locationTitle')}
-      <br /><br />
-      <a href={t('cashflow.locationUrl')}>{t('cashflow.locationUrl')}</a>
-    </p>
-  </main>
+<Layout title={t('site.title')} isNoFooter={true}>
+  <AdminReact client:only />
 </Layout>
 
 <style>

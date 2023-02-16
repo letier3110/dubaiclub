@@ -1,11 +1,15 @@
 ---
-import { t } from "i18next";
-import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
-import dataJson from "../data/calendar.json";
-import telegram from "../assets/telegram.svg";
-import CalendarEntry from "../components/CalendarEntry.astro";
+import { t, changeLanguage } from "i18next";
+import Layout from "../../layouts/Layout.astro";
+import Card from "../../components/Card.astro";
+import dataJson from "../../data/calendar.json";
+import telegram from "../../assets/telegram.svg";
+// import twitter from '../../assets/twitter.svg'
+// import instagram from '../../assets/instagram.svg'
+import CalendarEntry from "../../components/CalendarEntry.astro";
 import { LanguageSelector } from "astro-i18next/components";
+
+changeLanguage("en");
 
 const TELEGRAM_URL = "https://t.me/chatdubaiopenclub";
 ---
@@ -19,6 +23,9 @@ const TELEGRAM_URL = "https://t.me/chatdubaiopenclub";
         <a class='social' href={TELEGRAM_URL} target='_blank' rel='noreferrer'>
           <img src={telegram} alt='telegram' />
         </a>
+        <!-- <a class='social' href={INSTAGRAM_URL} target='_blank' rel='noreferrer'>
+					<img src={instagram} alt='instagram' />
+				</a> -->
       </div>
     </div>
     <p class='instructions'>

@@ -1,7 +1,5 @@
 ---
-import { t, changeLanguage } from "i18next";
-
-changeLanguage("uk");
+import { t } from "i18next";
 
 const getWeekDay = (date: Date) => {
 	const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
@@ -29,7 +27,7 @@ const date = new Date(event.date);
 const eventDate = `${formatNumber(date.getDate())}.${formatNumber(date.getUTCMonth()+1)}`;
 ---
 <p class="instructions">
-	<code>{eventDate}, {getWeekDay(date)}, {event.time}</code> - {event.title} <strong>{event.location}</strong>.
+	<code>{eventDate}, {getWeekDay(date)}, {event.time}</code> - {t('home.' + event.title)} <strong>{event.location}</strong>.
 </p>
 <style>
 	.instructions {

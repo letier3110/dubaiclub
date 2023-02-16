@@ -2,11 +2,11 @@
 import { t, changeLanguage } from 'i18next'
 import Layout from '../layouts/Layout.astro'
 import Card from '../components/Card.astro'
-
-changeLanguage('uk')
+import { LanguageSelector } from 'astro-i18next/components'
 ---
 
 <Layout title={t('site.title')}>
+  <LanguageSelector showFlag={true} class='my-select-class' />
   <main>
     <h1>
       <a class='header-link' href='/'>
@@ -43,7 +43,7 @@ changeLanguage('uk')
     max-width: 60ch;
   }
   h1 {
-    font-size: 3rem;
+    font-size: 2.6rem;
     font-weight: 800;
     margin: 0;
   }

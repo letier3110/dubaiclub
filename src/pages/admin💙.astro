@@ -1,23 +1,10 @@
 ---
-import { t, changeLanguage } from 'i18next'
-import { AdminReact } from '../components/AdminReact';
-import { Login } from '../components/Login'
-import Layout from '../layouts/Layout.astro'
+import { t, changeLanguage } from "i18next";
+import { AdminReact } from "../components/AdminReact";
+import { Login } from "../components/Login";
+import Layout from "../layouts/Layout.astro";
 
-changeLanguage('uk')
-
-// const data = await fetch('http://0.0.0.0:8000/login', {
-//   headers: {
-//     'Content-Type': 'application/json',
-//     Accept: 'application/json'
-//   },
-//   method: 'POST',
-//   body: JSON.stringify({
-//     name: 'Astro',
-//     password: '12345'
-//   })
-// }).then((res) => res.json());
-// console.log(data)
+changeLanguage("uk");
 ---
 
 <Layout title={t('site.title')} isNoFooter={true}>

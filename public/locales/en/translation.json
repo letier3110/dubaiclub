@@ -1,0 +1,63 @@
+{
+  "site": {
+    "title": "Dubai Open Club - socialization platform for ukranians."
+  },
+  "home": {
+    "title": "Dubai Open Club EN",
+    "intro": {
+      "part1": "We welcome our friends to socialize and have a good time with the Ukrainian community in",
+      "part2": "Dubai",
+      "part3": "At the moment, we have an offer for you to take part in such events:"
+    },
+    "mafiaCard": {
+      "title": "Mafia and Board Games",
+      "body": "A meet-and-greet where we will talk, play games (mafia, uno, alias, etc.) and just have a good time"
+    },
+    "cashflowCard": {
+      "title": "Cashflow",
+      "body": "Evening of financial game with a business coach from Kyiv"
+    },
+    "cinemaClubCard": {
+      "title": "Cinemaclub (soon)",
+      "body": "Movies, Movies, Movies!"
+    },
+    "cultureCard": {
+      "title": "Cultural evenings",
+      "body": "Getting to know Ukrainian culture💛💙"
+    },
+    "mafiaIn": "Mafia in",
+    "cashflowIn": "Cashflow in",
+    "calendarTitle": "Upcoming Events",
+    "calendarOld": "Past Events"
+  },
+  "mafia": {
+    "title": "Mafia and Board Games",
+    "format": "Plan for the evening:",
+    "part1": "- food - as of now - order from any restaurant in Talabat (we have a pro version) or wherever your heart desires ))",
+    "part2": "- Beverages - tea, cookies, candies are freely available at ☺️ and we also bought coffee, juices, soft drinks, and other drinks - the prices are very affordable - definitely cheaper than in any other place)",
+    "part3": "- We also invited a service person to help with drinks, keep the place clean, and ensure a comfortable environment for all guests.",
+    "part4": "- In addition, you can bring any food and drinks with you.",
+    "part5": "We all understand that any organization of an event means certain expenses that we share with everyone. Accordingly, the organizational fee, according to preliminary calculations, is 50 aed per person",
+    "part6": "The meeting point is a cottage in Al Barsha South, street 59, Villa 27. There is enough parking space in the courtyard of the cottage))",
+    "locationTitle": "The meeting will be held here ⬇️",
+    "locationUrl": "https://maps.app.goo.gl/CLogKLKaFUrRZHCK8?g_st=it"
+  },
+  "cashflow": {
+    "title": "Cashflow",
+    "format": "Plan for the evening:",
+    "part1": "During the game, a business coach from Kyiv will give you tips, reveal various financial tricks, and explain your actions so that you can build financial strategies in real life in the most effective way.",
+    "part2": "🔸The game lasts 5-6 hours",
+    "part3": "🔸Number of participants - 5-7 people",
+    "part4": "🔸Coaching fee 100 aed",
+    "part5": "The meeting point is a cottage in Al Barsha South, street 59, Villa 27. There is enough parking space in the courtyard of the cottage))",
+    "locationTitle": "The meeting will be held here ⬇️",
+    "locationUrl": "https://maps.app.goo.gl/CLogKLKaFUrRZHCK8?g_st=it"
+  },
+  "Monday": "Monay",
+  "Tuesday": "Tuesday",
+  "Wednesday": "Wednesday",
+  "Thursday": "Thursday",
+  "Friday": "Friday",
+  "Saturday": "Saturday",
+  "Sunday": "Sunday"
+}

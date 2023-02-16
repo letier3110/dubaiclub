@@ -1,12 +1,12 @@
 ---
 import { t, changeLanguage } from "i18next";
-import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
-import { LanguageSelector } from 'astro-i18next/components'
+import Layout from "../../layouts/Layout.astro";
+import Card from "../../components/Card.astro";
+
+changeLanguage("en");
 ---
 
 <Layout title={t('site.title')}>
-  <LanguageSelector showFlag={true} class='my-select-class' />
   <main>
     <h1>
       <a class='header-link' href='/'>

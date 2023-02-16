@@ -1,35 +1,37 @@
 ---
 import { t, changeLanguage } from "i18next";
-import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
-import { LanguageSelector } from 'astro-i18next/components'
+import Layout from "../../layouts/Layout.astro";
+import Card from "../../components/Card.astro";
+
+changeLanguage("en");
 ---
 
 <Layout title={t('site.title')}>
-  <LanguageSelector showFlag={true} class='my-select-class' />
   <main>
     <h1>
       <a class='header-link' href='/'>
-        <span class='text-gradient'><span>&larr;</span>{t('cashflow.title')}</span>
+        <span class='text-gradient'><span>&larr;</span>{t('mafia.title')}</span>
       </a>
     </h1>
     <p class='instructions'>
-      {t('cashflow.format')}
+      {t('mafia.format')}
       <br /><br />
-      {t('cashflow.part1')}
+      {t('mafia.part1')}
       <br /><br />
-      {t('cashflow.part2')}
+      {t('mafia.part2')}
       <br /><br />
-      {t('cashflow.part3')}
+      {t('mafia.part3')}
       <br /><br />
-      {t('cashflow.part4')}
+      {t('mafia.part4')}
       <br /><br />
-      {t('cashflow.part5')}
+      {t('mafia.part5')}
+      <br /><br />
+      {t('mafia.part6')}
     </p>
     <p class='instructions'>
-      {t('cashflow.locationTitle')}
+      {t('mafia.locationTitle')}
       <br /><br />
-      <a href={t('cashflow.locationUrl')}>{t('cashflow.locationUrl')}</a>
+      <a href={t('mafia.locationUrl')}>{t('mafia.locationUrl')}</a>
     </p>
   </main>
 </Layout>
