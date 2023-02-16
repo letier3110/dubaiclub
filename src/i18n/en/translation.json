@@ -1,0 +1,26 @@
+{
+  "languages": "Languages",
+  "login": {
+    "login": "Login",
+    "signin": "Sign in",
+    "name": "Name",
+    "password": "Sign in"
+  },
+  "admin": {
+    "newOrder": "New order",
+    "orders": "Orders",
+    "goback": "Go back",
+    "renew": "Update order",
+    "total": "Total"
+  },
+  "store": {
+    "name": "Customer name",
+    "create": "Create order",
+    "check": "Check",
+    "unfold": "Unfold",
+    "fold": "Fold",
+    "deleteOne": "Delete 1",
+    "add": "Add",
+    "addMore": "Add more"
+  }
+}

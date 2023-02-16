@@ -1,4 +1,5 @@
 import { FC, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import menuData from '../data/menu.json'
 import type { DishItem } from '../interfaces/order.interface'
 
@@ -7,6 +8,7 @@ interface StoreProps {
 }
 
 export const Store: FC<StoreProps> = ({ submitOrder }) => {
+  const { t } = useTranslation()
   const [orderName, setOrderName] = useState('')
   const [dishes, setDishes] = useState<DishItem[]>([])
   const [collapsed, setCollapsed] = useState(true)
@@ -30,7 +32,7 @@ export const Store: FC<StoreProps> = ({ submitOrder }) => {
               type='text'
               value={orderName}
               onChange={(e) => setOrderName(e.target.value)}
-              placeholder='Введіть імʼя замовника'
+              placeholder={t('store.name') ?? 'Введіть імʼя замовника'}
               className='w-full px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500'
             />
             <button
@@ -38,14 +40,14 @@ export const Store: FC<StoreProps> = ({ submitOrder }) => {
               className=' inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out'
               onClick={() => submitOrder(orderName, dishes)}
             >
-              Створити замовлення
+              {t('store.create')}
             </button>
           </div>
           {uniqueDishesWithCount.length > 0 && (
             <div className='mt-6'>
               <div className='flex flex-row justify-between'>
                 <h5 className='text-gray-900 text-xl leading-tight font-medium mb-2'>
-                  Чек{' '}
+                  {t('store.check')}{' '}
                   {uniqueDishesWithCount.reduce((acc, x) => {
                     return acc + x.price * x.count
                   }, 0)}
@@ -57,7 +59,7 @@ export const Store: FC<StoreProps> = ({ submitOrder }) => {
                     className=' inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out'
                     onClick={() => setCollapsed(false)}
                   >
-                    Розгорнути
+                    {t('store.unfold')}
                   </button>
                 )}
                 {!collapsed && (
@@ -66,7 +68,7 @@ export const Store: FC<StoreProps> = ({ submitOrder }) => {
                     className=' inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out'
                     onClick={() => setCollapsed(true)}
                   >
-                    Згорнути
+                    {t('store.fold')}
                   </button>
                 )}
               </div>
@@ -92,7 +94,7 @@ export const Store: FC<StoreProps> = ({ submitOrder }) => {
                               }
                             }}
                           >
-                            Видалити 1
+                            {t('store.deleteOne')}
                           </button>
                         </div>
                       </div>
@@ -118,9 +120,12 @@ export const Store: FC<StoreProps> = ({ submitOrder }) => {
                 }}
                 className='flex flex-col justify-between p-6 rounded-lg shadow-lg bg-white max-w-sm relative'
               >
-                <div className='w-full p-1 md:p-2 rounded-lg' style={{
-                  backgroundColor: 'rgba(255, 255, 255, 0.8)'
-                }}>
+                <div
+                  className='w-full p-1 md:p-2 rounded-lg'
+                  style={{
+                    backgroundColor: 'rgba(255, 255, 255, 0.8)'
+                  }}
+                >
                   <h5 className='text-gray-900 text-xl leading-tight font-medium mb-2 '>
                     {x.name} - {x.price}aed
                     <p className='text-gray-700 text-base mb-4 '>{x.description.substring(0, 100)}</p>
@@ -133,7 +138,7 @@ export const Store: FC<StoreProps> = ({ submitOrder }) => {
                     setDishes([...dishes, { name: x.name, price: Number.parseInt(x.price) }])
                   }}
                 >
-                  Додати
+                  {t('store.add')}
                 </button>
               </div>
             )

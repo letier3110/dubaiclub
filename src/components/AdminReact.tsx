@@ -1,4 +1,6 @@
 import { FC, useEffect, useState } from 'react'
+import '../i18n/config'
+import { useTranslation } from 'react-i18next'
 import type { DishItem, OrderItem } from '../interfaces/order.interface'
 import { Login } from './Login'
 import { Orders } from './Orders'
@@ -35,12 +37,12 @@ const mockData = [
 ]
 
 export const AdminReact: FC = () => {
+  const { t } = useTranslation()
   const params = new Proxy(new URLSearchParams(window.location.search), {
     get: (searchParams, prop) => searchParams.get(prop.toString())
   })
-  // Get the value of "some_key" in eg "https://example.com/?some_key=some_value"
   // @ts-ignore
-  const sharedId = params.id ?? null // "some_value"
+  const sharedId = params.id ?? null
 
   const [loggedIn, setLoggedIn] = useState<null | string>(null)
   const [inOrders, setInOrders] = useState(true)
@@ -140,7 +142,7 @@ export const AdminReact: FC = () => {
     return (
       <section className='h-screen'>
         <div className='flex flex-start items-center flex-col pt-3'>
-          <h1>{inOrders ? `Замовлення` : `Нове замовлення`}</h1>
+          <h1>{inOrders ? t('admin.orders') : t('admin.newOrder')}</h1>
           {inOrders && (
             <Orders orders={orders} navigate={goInStore} onClick={(item) => setShowOrder(item)} />
           )}

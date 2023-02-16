@@ -1,4 +1,5 @@
 import type { FC } from 'react'
+import { useTranslation } from 'react-i18next'
 import type { DishItem, OrderItem } from '../interfaces/order.interface'
 
 interface OrdersProps {
@@ -8,6 +9,7 @@ interface OrdersProps {
 }
 
 export const Orders: FC<OrdersProps> = ({ orders, navigate, onClick = () => {} }) => {
+  const { t } = useTranslation()
   if (orders.length === 0) {
     return (
       <div className='flex flex-start items-center flex-col pt-3'>
@@ -17,7 +19,7 @@ export const Orders: FC<OrdersProps> = ({ orders, navigate, onClick = () => {} }
           className='inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out'
           onClick={navigate}
         >
-          Додати
+          {t('store.add')}
         </button>
       </div>
     )
@@ -63,7 +65,7 @@ export const Orders: FC<OrdersProps> = ({ orders, navigate, onClick = () => {} }
             </div>
             <div className='flex flex-wrap gap-2 mt-2'>
               <h5 className='text-gray-900 text-md leading-tight font-medium mb-2'>
-                Всього:{' '}
+              {t('admin.total')}:{' '}
                 {uniqueDishesWithCount.reduce((acc, x) => {
                   return acc + x.price * x.count
                 }, 0)}
@@ -80,7 +82,7 @@ export const Orders: FC<OrdersProps> = ({ orders, navigate, onClick = () => {} }
             className='inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out'
             onClick={navigate}
           >
-            Додати ще
+            {t('store.addMore')}
           </button>
         </div>
       </div>
