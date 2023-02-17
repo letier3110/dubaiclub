@@ -1,23 +1,4 @@
 [
-  {
-    "name": "Чай",
-    "price": "0",
-    "description": "чорний зелений",
-    "image": ""
-  },
-  {
-    "name": "Еспрессо",
-    "price": "0",
-    "description": "",
-    "image": ""
-  },
-  {
-    "name": "Амерікано",
-    "price": "0",
-    "description": "",
-    "image": ""
-  },
-  {"name": "Звичайна вода ","description":"", "image":"", "price": 0 },
   {"name": "sparkling water ","description":"", "image":"", "price": 10 },
   {"name": "coca cola ","description":"", "image":"", "price": 5 },
   {"name": "sprite ","description":"", "image":"", "price": 5 },
@@ -25,7 +6,7 @@
   {"name": "schweppes ","description":"", "image":"", "price": 7 },
   {"name": "juice ","description":"", "image":"", "price": 7 },
   {"name": "redbull ","description":"", "image":"", "price": 25 },
-  {"name": "corona 0.35l ","description":"", "image":"", "price": 27 },
+  {"name": "corona 0.35l ","description":"", "image":"", "price": 25 },
   {"name": "peroni 0.33l ","description":"", "image":"", "price": 25 },
   {"name": "whiskey cola, 50/150ml ","description":"", "image":"", "price": 40 },
   {"name": "gin tonic, 50/150ml ","description":"", "image":"", "price": 35 },
