@@ -1,44 +1,61 @@
 [
   {
+    "name": "Чай",
+    "price": "0",
+    "description": "чорний зелений",
+    "image": ""
+  },
+  {
+    "name": "Еспрессо",
+    "price": "0",
+    "description": "",
+    "image": ""
+  },
+  {
+    "name": "Амерікано",
+    "price": "0",
+    "description": "",
+    "image": ""
+  },
+  {"name": "Звичайна вода ","description":"", "image":"", "price": 0 },
+  {"name": "sparkling water ","description":"", "image":"", "price": 10 },
+  {"name": "coca cola ","description":"", "image":"", "price": 5 },
+  {"name": "sprite ","description":"", "image":"", "price": 5 },
+   {"name": "fanta ","description":"", "image":"", "price": 5 },
+  {"name": "schweppes ","description":"", "image":"", "price": 7 },
+  {"name": "juice ","description":"", "image":"", "price": 7 },
+  {"name": "redbull ","description":"", "image":"", "price": 25 },
+  {"name": "corona 0.35l ","description":"", "image":"", "price": 27 },
+  {"name": "peroni 0.33l ","description":"", "image":"", "price": 25 },
+  {"name": "whiskey cola, 50/150ml ","description":"", "image":"", "price": 40 },
+  {"name": "gin tonic, 50/150ml ","description":"", "image":"", "price": 35 },
+  {"name": "rum cola, 50/150ml ","description":"", "image":"", "price": 40 },
+  {"name": "otvertka 50/150ml ","description":"", "image":"", "price": 25 },
+  {"name": "malbec red dry ","description":"", "image":"", "price": 35 },
+  {"name": "pino gragio white dry ","description":"", "image":"", "price": 35 },
+  {"name": "chain of ponds sparklink, bottle ","description":"", "image":"", "price": 165 },
+  {"name": "linderman sin rose sparkling, bottle ","description":"", "image":"", "price": 150 },
+  {"name": "jack daniels, 50ml ","description":"", "image":"", "price": 30 },
+  {"name": "jameson, 50ml ","description":"", "image":"", "price": 35 },
+  {"name": "chivas regal 12yo, 50ml ","description":"", "image":"", "price": 40 },
+  {"name": "baccardi gold, 50ml ","description":"", "image":"", "price": 30 },
+  {"name": "baccardi black 50ml ","description":"", "image":"", "price": 35 },
+  {"name": "tequilla jasse, 50ml ","description":"", "image":"", "price": 25 },
+  {"name": "gin perigans, 50ml ","description":"", "image":"", "price": 30 },
+  {"name": "finlandia, 50ml ","description":"", "image":"", "price": 20 },
+  {"name": "absolut, 50ml ","description":"", "image":"", "price": 20 },
+  {"name": "pelmeni kurka - ","description":"", "image":"", "price": 25 },
+  {"name": "pelmeni yalovichina - ","description":"", "image":"", "price": 25 },
+  {"name": "вареники вишня - ","description":"", "image":"", "price": 25 },
+  {"name": "вареники картопля - ","description":"", "image":"", "price": 25 },
+  {"name": "вареники капуста - ","description":"", "image":"", "price": 25 },
+  {"name": "vapes 25000 puffs ","description":"", "image":"", "price": 30 },
+  {"name": "чіпси ","description":"", "image":"", "price": 15 },
+
+  {
     "name": "Вхідний білет",
     "price": "50",
     "description": "Мафія клуб",
     "image": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/6662f41240543.5897921099b80.jpg"
-  },
-  {
-    "name": "Корона пиво",
-    "price": "50",
-    "description": "Корона пиво",
-    "image": "https://tl-family.com/wp-content/uploads/2021/01/pivo-Corona-Extra.jpg"
-  },
-  {
-    "name": "Вино біле",
-    "price": "45",
-    "description": "Вино біле (бокал)",
-    "image": "https://jamones.com.ua/image/cache/catalog/vinoz/80-500x500.jpg"
-  },
-  {
-    "name": "Вино червоне",
-    "price": "45",
-    "description": "Вино червоне (бокал)",
-    "image": "https://winewine.com.ua/wp-content/uploads/2020/12/arpepe-il-pettirosso-valtellina-superiore.jpg"
-  },
-  {
-    "name": "Пельмені",
-    "price": "25",
-    "description": "Пельмені з мʼясом (порція)",
-    "image": "https://smak.ua/i/75/91/0/75910/image_main/e9473057a69d4b01ca3e1caeeaeb848e-resize_crop_1Xquality_100Xallow_enlarge_0Xw_1200Xh_630.jpg"
-  },
-  {
-    "name": "Вареники з вишнею",
-    "price": "25",
-    "description": "Вареники (порція)",
-    "image": "https://images.unian.net/photos/2020_07/1595919237-6638.jpg?0.19634984403781552"
-  },
-  {
-    "name": "Вареники з картоплею",
-    "price": "27",
-    "description": "Вареники (порція)",
-    "image": "https://sensatsiya.com/wp-content/uploads/2020/10/imgonline-com-ua-resize-xncczghcmogztf-900x525.jpg"
   }
 ]
