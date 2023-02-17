@@ -38,6 +38,7 @@ const mockData = [
 
 export const AdminReact: FC = () => {
   const { t } = useTranslation()
+  let timer: any = null
   const params = new Proxy(new URLSearchParams(window.location.search), {
     get: (searchParams, prop) => searchParams.get(prop.toString())
   })
@@ -50,10 +51,19 @@ export const AdminReact: FC = () => {
   const [orders, setOrders] = useState<OrderItem[]>([])
 
   useEffect(() => {
-    if(loggedIn) {
-      handleLoadOrders(loggedIn);
+    if (loggedIn) {
+      handleLoadOrders(loggedIn)
     }
   }, [loggedIn])
+
+  useEffect(() => {
+    timer = setTimeout(() => {
+      if (loggedIn) {
+        handleLoadOrders(loggedIn)
+      }
+    }, 30000)
+    return () => clearTimeout(timer)
+  }, [])
 
   const goInOrders = () => {
     setInOrders(true)
@@ -81,8 +91,8 @@ export const AdminReact: FC = () => {
         dishes
       })
     })
-    if(loggedIn) {
-      handleLoadOrders(loggedIn);
+    if (loggedIn) {
+      handleLoadOrders(loggedIn)
     }
   }
 
@@ -143,9 +153,7 @@ export const AdminReact: FC = () => {
       <section className='h-screen'>
         <div className='flex flex-start items-center flex-col pt-3'>
           <h1>{inOrders ? t('admin.orders') : t('admin.newOrder')}</h1>
-          {inOrders && (
-            <Orders orders={orders} navigate={goInStore} onClick={(item) => setShowOrder(item)} />
-          )}
+          {inOrders && <Orders orders={orders} navigate={goInStore} onClick={(item) => setShowOrder(item)} />}
           {!inOrders && <Store submitOrder={submitOrder} />}
         </div>
       </section>
