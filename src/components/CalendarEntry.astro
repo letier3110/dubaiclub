@@ -1,52 +1,68 @@
 ---
-import { t } from "i18next";
+import { t } from 'i18next'
 
 const getWeekDay = (date: Date) => {
-	const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-	return t(days[date.getDay()]);
+  const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+  return t(days[date.getDay()])
 }
 
 const formatNumber = (num: number) => {
-	return num.toString().padStart(2, "0");
+  return num.toString().padStart(2, '0')
 }
 
 export interface Props {
-	event: IEvent;
+  event: IEvent
 }
 
 interface IEvent {
-	id: string;
-	date: string;
-	time: string;
-	location: string;
-	title: string;
+  id: string
+  date: string
+  time: string
+  location: string
+  title: string
 }
 
-const { event } = Astro.props;
-const date = new Date(event.date);
-const eventDate = `${formatNumber(date.getDate())}.${formatNumber(date.getUTCMonth()+1)}`;
+const { event } = Astro.props
+const date = new Date(event.date)
+const eventDate = `${formatNumber(date.getDate())}.${formatNumber(date.getUTCMonth() + 1)}`
+const href = event.title === 'lilaIn' ? 'lila' : event.title === 'mafiaIn' ? 'mafia' : 'cashflow'
 ---
-<p class="instructions">
-	<code>{eventDate}, {getWeekDay(date)}, {event.time}</code> - {t('home.' + event.title)} <strong>{event.location}</strong>.
-</p>
+
+<a href={href} class='instructions'>
+  <code>{eventDate}, {getWeekDay(date)}, {event.time}</code> - {t('home.' + event.title)}
+  <strong>{event.location}</strong>.
+</a>
 <style>
-	.instructions {
-		line-height: 1.6;
-		margin: 1rem 0;
-		border: 1px solid rgba(var(--accent), 25%);
-		background-color: white;
-		padding: 1rem;
-		border-radius: 0.4rem;
+  .instructions {
+    display: block;
+
+    line-height: 1.6;
+    margin: 1rem 0;
+    border: 1px solid rgba(var(--accent), 25%);
+    background-color: white;
+		background-image: var(--accent-gradient);
+		background-size: 400%;
+		border-radius: 0.5rem;
+		background-position: 99%;
+		transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    padding: 1rem;
+    border-radius: 0.4rem;
+  }
+  .instructions code {
+    font-size: 0.875em;
+    font-weight: bold;
+    background: rgba(var(--accent), 12%);
+    color: rgb(var(--accent));
+    border-radius: 4px;
+    padding: 0.3em 0.45em;
+  }
+  .instructions strong {
+    color: rgb(var(--accent));
+  }
+  .instructions:is(:hover, :focus-within) {
+		background-position: 50% 10%;
 	}
-	.instructions code {
-		font-size: 0.875em;
-		font-weight: bold;
-		background: rgba(var(--accent), 12%);
-		color: rgb(var(--accent));
-		border-radius: 4px;
-		padding: 0.3em 0.45em;
-	}
-	.instructions strong {
+	.instructions:is(:hover, :focus-within) h2 {
 		color: rgb(var(--accent));
 	}
 </style>
