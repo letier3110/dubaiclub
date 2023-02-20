@@ -1,0 +1,91 @@
+---
+import { t, changeLanguage } from 'i18next'
+import Layout from '../layouts/Layout.astro'
+import Card from '../components/Card.astro'
+import { LanguageSelector } from 'astro-i18next/components'
+---
+
+<Layout title={t('site.title')}>
+  <LanguageSelector showFlag={true} class='my-select-class' />
+  <main>
+    <h1>
+      <a class='header-link' href='/'>
+        <span class='text-gradient'><span>&larr;</span>{t('paint.title')}</span>
+      </a>
+    </h1>
+    <p class='instructions'>
+      {t('paint.format')}
+      <br /><br />
+      {t('paint.part1')}
+      <br /><br />
+      {t('paint.part2')}
+      <br /><br />
+      {t('paint.part3')}
+      <br /><br />
+      {t('paint.part4')}
+      <br /><br />
+      {t('paint.part5')}
+      <br /><br />
+      {t('paint.part6')}
+      <br /><br />
+      {t('paint.part7')}
+      <br /><br />
+      <a href={t('paint.part8')} target='_blank' rel='noopener noreferrer'>{t('paint.part8')}</a>
+      <br /><br />
+      {t('paint.part9')}
+      <br /><br />
+      <a href={t('paint.part10')} target='_blank' rel='noopener noreferrer'>{t('paint.part10')}</a>
+      <br /><br />
+      {t('paint.part11')}
+    </p>
+  </main>
+</Layout>
+
+<style>
+  main {
+    margin: auto;
+    padding: 1.5rem;
+    max-width: 60ch;
+  }
+  h1 {
+    font-size: 2.6rem;
+    font-weight: 800;
+    margin: 0;
+  }
+  .header-link {
+    color: inherit;
+    text-decoration: none;
+  }
+  .text-gradient {
+    background-image: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400%;
+    background-position: 0%;
+  }
+  .instructions {
+    line-height: 1.6;
+    margin: 1rem 0;
+    border: 1px solid rgba(var(--accent), 25%);
+    background-color: white;
+    padding: 1rem;
+    border-radius: 0.4rem;
+  }
+  .instructions code {
+    font-size: 0.875em;
+    font-weight: bold;
+    background: rgba(var(--accent), 12%);
+    color: rgb(var(--accent));
+    border-radius: 4px;
+    padding: 0.3em 0.45em;
+  }
+  .instructions strong {
+    color: rgb(var(--accent));
+  }
+  .link-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+    gap: 1rem;
+    padding: 0;
+  }
+</style>
