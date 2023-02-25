@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next'
 import { FullscreenPlayer, initialState, MainGameState, Player, Roles } from './Mafia.interface'
 import { FullscreenPlayer as FullscreenPlayerComponent } from './FullscreenPlayer'
 import { performCheckRoleDetective, performCheckRoleDon } from './util'
+import { Button } from './Button'
 
 const getStateFromLocalStorage = (stateKey: string) => {
   const storage = localStorage.getItem(stateKey)
@@ -15,6 +16,7 @@ export const MafiaReact: FC = () => {
   const { t } = useTranslation()
   const [state, setState] = useState<MainGameState>(getStateFromLocalStorage('state') || initialState)
   const [isNight, setIsNight] = useState<boolean>(false)
+  const [emojiMode, setEmojiMode] = useState<boolean>(false)
   const [isFaultsMode, setIsFaultsMode] = useState<boolean>(false)
   const [fullscreenPlayer, setFullscreenPlayer] = useState<FullscreenPlayer | null>(null)
   const [viewingRole, setViewingRole] = useState<string>('')
@@ -265,107 +267,65 @@ export const MafiaReact: FC = () => {
                     <span className={playerKilledClassName}>Голосів: {player.votes}</span>
                   )}
                 </div>
-                <div className='flex items-center justify-center flex-wrap gap-2'>
+                <div className='flex lg:flex-row items-center justify-center flex-wrap gap-2'>
                   {state.players.some((x) => x.alive === true && x.role === Roles.DETECTIVE) && isNight && (
-                    <button
-                      className='inline-block px-6 py-2.5 bg-white text-gray-700 font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-gray-100 hover:shadow-lg focus:bg-gray-100 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-200 active:shadow-lg transition duration-150 ease-in-out mr-4'
-                      role='button'
-                      data-mdb-ripple='true'
-                      data-mdb-ripple-color='light'
+                    <Button
+                      className='text-3xl p-0'
                       onClick={() => handleFullscreenPlayer(player, index + 1, Roles.DETECTIVE)}
                     >
-                      Показати Шеріфу
-                    </button>
+                      👮
+                    </Button>
                   )}
                   {state.players.some((x) => x.alive === true && x.role === Roles.DON) && isNight && (
-                    <button
-                      className='inline-block px-6 py-2.5 bg-white text-gray-700 font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-gray-100 hover:shadow-lg focus:bg-gray-100 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-200 active:shadow-lg transition duration-150 ease-in-out mr-4'
-                      role='button'
-                      data-mdb-ripple='true'
-                      data-mdb-ripple-color='light'
+                    <Button
+                      className='text-3xl p-0'
                       onClick={() => handleFullscreenPlayer(player, index + 1, Roles.DON)}
                     >
-                      Показати Дону
-                    </button>
+                      🐺
+                    </Button>
                   )}
                   {isNight && (
-                    <button
-                      className='inline-block px-6 py-2.5 bg-white text-gray-700 font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-gray-100 hover:shadow-lg focus:bg-gray-100 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-200 active:shadow-lg transition duration-150 ease-in-out mr-4'
-                      role='button'
-                      data-mdb-ripple='true'
-                      data-mdb-ripple-color='light'
-                      onClick={() => handleRotateRole(player)}
-                    >
-                      Змінити роль на {getNewRoleForPlayer(player).role}
-                    </button>
+                    <Button className='px-3 py-2.5' onClick={() => handleRotateRole(player)}>
+                      ➡️ {getNewRoleForPlayer(player).role}
+                    </Button>
                   )}
-                  <button
-                    className='inline-block px-6 py-2.5 bg-white text-gray-700 font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-gray-100 hover:shadow-lg focus:bg-gray-100 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-200 active:shadow-lg transition duration-150 ease-in-out mr-4'
-                    role='button'
-                    data-mdb-ripple='true'
-                    data-mdb-ripple-color='light'
+                  <Button
+                    className='text-3xl p-0'
                     onClick={() => {
                       player.alive ? killPlayer(player) : restorePlayer(player)
                     }}
                   >
-                    {player.alive ? 'Вбити' : 'Воскресити'}
-                  </button>
+                    {player.alive ? '💀' : '😇'}
+                  </Button>
                   {state.players.some((x) => x.alive === true && x.role === Roles.LADY) && isNight && (
-                    <button
-                      className='inline-block px-6 py-2.5 bg-white text-gray-700 font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-gray-100 hover:shadow-lg focus:bg-gray-100 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-200 active:shadow-lg transition duration-150 ease-in-out mr-4'
-                      role='button'
-                      data-mdb-ripple='true'
-                      data-mdb-ripple-color='light'
+                    <Button
+                      className='text-3xl p-0'
                       onClick={() => {
                         player.muted ? unmutePlayer(player) : mutePlayer(player)
                       }}
                     >
-                      {player.muted ? 'Розмовчати' : 'Замовчати'}
-                    </button>
+                      {player.muted ? '🧏' : '🎤'}
+                    </Button>
                   )}
                   {isFaultsMode && isNight === false && player.faults > 0 && (
-                    <button
-                      className='inline-block px-6 py-2.5 bg-white text-gray-700 font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-gray-100 hover:shadow-lg focus:bg-gray-100 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-200 active:shadow-lg transition duration-150 ease-in-out mr-4'
-                      role='button'
-                      data-mdb-ripple='true'
-                      data-mdb-ripple-color='light'
-                      onClick={() => handleRemoveOneFault(player)}
-                    >
+                    <Button className='px-3 py-2.5' onClick={() => handleRemoveOneFault(player)}>
                       -1 Фол
-                    </button>
+                    </Button>
                   )}
                   {isFaultsMode && isNight === false && (
-                    <button
-                      className='inline-block px-6 py-2.5 bg-white text-gray-700 font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-gray-100 hover:shadow-lg focus:bg-gray-100 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-200 active:shadow-lg transition duration-150 ease-in-out mr-4'
-                      role='button'
-                      data-mdb-ripple='true'
-                      data-mdb-ripple-color='light'
-                      onClick={() => handleAddFault(player)}
-                    >
+                    <Button className='px-3 py-2.5' onClick={() => handleAddFault(player)}>
                       +1 Фол
-                    </button>
+                    </Button>
                   )}
                   {isFaultsMode === false && isNight === false && player.votes > 0 && (
-                    <button
-                      className='inline-block px-6 py-2.5 bg-white text-gray-700 font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-gray-100 hover:shadow-lg focus:bg-gray-100 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-200 active:shadow-lg transition duration-150 ease-in-out mr-4'
-                      role='button'
-                      data-mdb-ripple='true'
-                      data-mdb-ripple-color='light'
-                      onClick={() => handleRemoveOneVote(player)}
-                    >
+                    <Button className='px-3 py-2.5' onClick={() => handleRemoveOneVote(player)}>
                       -1 Голос
-                    </button>
+                    </Button>
                   )}
                   {isFaultsMode === false && isNight === false && (
-                    <button
-                      className='inline-block px-6 py-2.5 bg-white text-gray-700 font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-gray-100 hover:shadow-lg focus:bg-gray-100 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-200 active:shadow-lg transition duration-150 ease-in-out mr-4'
-                      role='button'
-                      data-mdb-ripple='true'
-                      data-mdb-ripple-color='light'
-                      onClick={() => handleAddVote(player)}
-                    >
+                    <Button className='px-3 py-2.5' onClick={() => handleAddVote(player)}>
                       +1 Голос
-                    </button>
+                    </Button>
                   )}
                 </div>
               </div>
@@ -376,51 +336,68 @@ export const MafiaReact: FC = () => {
               <strong className='mr-1'>Управління грою</strong>
             </div>
             <div className='flex items-center justify-center'>
-              <button
-                className='inline-block px-6 py-2.5 bg-white text-gray-700 font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-gray-100 hover:shadow-lg focus:bg-gray-100 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-200 active:shadow-lg transition duration-150 ease-in-out mr-4'
-                role='button'
-                data-mdb-ripple='true'
-                data-mdb-ripple-color='light'
-                onClick={addPlayer}
-              >
+              <Button className='px-3 py-2.5' onClick={addPlayer}>
                 +1 гравець
-              </button>
-              <button
-                className='inline-block px-6 py-2.5 bg-white text-gray-700 font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-gray-100 hover:shadow-lg focus:bg-gray-100 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-200 active:shadow-lg transition duration-150 ease-in-out mr-4'
-                role='button'
-                data-mdb-ripple='true'
-                data-mdb-ripple-color='light'
-                onClick={handleChangeDayPhase}
-              >
-                Ввімкнути {isNight ? 'День' : 'Ніч'}
-              </button>
+              </Button>
+              <Button className='text-3xl p-0' onClick={handleChangeDayPhase}>
+                {isNight ? '🌚' : '🌞'}
+              </Button>
               {isNight === false && (
-                <button
-                  className='inline-block px-6 py-2.5 bg-white text-gray-700 font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-gray-100 hover:shadow-lg focus:bg-gray-100 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-200 active:shadow-lg transition duration-150 ease-in-out mr-4'
-                  role='button'
-                  data-mdb-ripple='true'
-                  data-mdb-ripple-color='light'
-                  onClick={handleChangeFaultsMode}
-                >
+                <Button className='px-3 py-2.5' onClick={handleChangeFaultsMode}>
                   {isFaultsMode ? 'Сховати' : 'Показати'} фоли
-                </button>
+                </Button>
               )}
             </div>
           </div>
         </div>
-        {state.players.length > 0 && state.players.every((x) => x.alive === false) && (
+        <div className='flex flex-col mt-2'>
+          <h2 className='text-2xl font-bold text-center text-black mb-4'>Легенда</h2>
+          <div className='flex flex-col gap-2'>
+            <div className='flex items-center gap-2'>
+              <span className='text-3xl'>👮</span>
+              <span>Показати роль Детективу / Шеріфу / Комісару</span>
+            </div>
+            <div className='flex items-center gap-2'>
+              <span className='text-3xl'>🐺</span>
+              <span>Показати роль Дону</span>
+            </div>
+            <div className='flex items-center gap-2'>
+              <span className='text-3xl'>➡️</span>
+              <span>Змінити роль гравця</span>
+            </div>
+            <div className='flex items-center gap-2'>
+              <span className='text-3xl'>💀</span>
+              <span>Вбити гравця</span>
+            </div>
+            <div className='flex items-center gap-2'>
+              <span className='text-3xl'>😇</span>
+              <span>Відновити гравця</span>
+            </div>
+            <div className='flex items-center gap-2'>
+              <span className='text-3xl'>🧏</span>
+              <span>Розглушити гравця</span>
+            </div>
+            <div className='flex items-center gap-2'>
+              <span className='text-3xl'>🎤</span>
+              <span>Заглушити гравця</span>
+            </div>
+            <div className='flex items-center gap-2'>
+              <span className='text-3xl'>🌚</span>
+              <span>Змінити фазу на день з ночі</span>
+            </div>
+            <div className='flex items-center gap-2'>
+              <span className='text-3xl'>🌞</span>
+              <span>Змінити фазу на ніч з дня</span>
+            </div>
+          </div>
+        </div>
+        {state.players.length > 0 && (
           <div className='container'>
             <div className='bg-red-500 fade show py-4 px-6 text-white md:flex justify-between items-center text-center md:text-left'>
               <div className='mb-4 md:mb-0 flex items-center flex-wrap justify-center md:justify-start'>
-                <button
-                  className='inline-block px-6 py-2.5 bg-white text-gray-700 font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-gray-100 hover:shadow-lg focus:bg-gray-100 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-200 active:shadow-lg transition duration-150 ease-in-out mr-4'
-                  role='button'
-                  data-mdb-ripple='true'
-                  data-mdb-ripple-color='light'
-                  onClick={handleNewGame}
-                >
+                <Button className='px-3 py-2.5' onClick={handleNewGame}>
                   Закінчити гру
-                </button>
+                </Button>
               </div>
             </div>
           </div>
