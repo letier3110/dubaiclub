@@ -21,7 +21,7 @@ export const FullscreenPlayer: FC<FullscreenPlayerProps> = ({
 
   // const roleClassName = role === Roles.TOWNSMAN ? 'bg-red-500' : 'bg-black'
   const roleClassName = performCheckRole(role)
-  const popupClassName = [roleClassName, 'h-full flex flex-col text-base bg-white shadow-xl overflow-y-scroll'].join(
+  const popupClassName = [roleClassName, 'h-full flex flex-col text-base shadow-xl overflow-y-scroll'].join(
     ' '
   )
 
