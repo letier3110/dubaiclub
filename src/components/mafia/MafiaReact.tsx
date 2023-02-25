@@ -276,7 +276,7 @@ export const MafiaReact: FC = () => {
                       data-mdb-ripple='true'
                       data-mdb-ripple-color='light'
                       onClick={() => {
-                        player.muted ? unmutePlayer(player) : unmutePlayer(player)
+                        player.muted ? unmutePlayer(player) : mutePlayer(player)
                       }}
                     >
                       {player.muted ? 'Розмовчати' : 'Замовчати'}
