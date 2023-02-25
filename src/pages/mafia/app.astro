@@ -1,13 +1,13 @@
 ---
 import { t, changeLanguage } from "i18next";
-import { AdminReact } from "../components/AdminReact";
-import Layout from "../layouts/Layout.astro";
+import { MafiaReact } from "../../components/mafia/MafiaReact";
+import Layout from "../../layouts/Layout.astro";
 
 changeLanguage("uk");
 ---
 
 <Layout title={t('site.title')} isNoFooter={true}>
-  <AdminReact client:only />
+  <MafiaReact client:only />
 </Layout>
 
 <style>
