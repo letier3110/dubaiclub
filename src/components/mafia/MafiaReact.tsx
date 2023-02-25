@@ -242,7 +242,7 @@ export const MafiaReact: FC = () => {
     <>
       <section className='h-screen'>
         <div className='container'>
-          <h1 className='text-3xl font-bold text-center text-black mb-4'>Список гравців</h1>
+          <h1 className='text-3xl leading-8 font-bold text-center text-black mb-4'>Список гравців</h1>
           {state.players.map((player, index) => {
             const playerKilledClassName = [getPlayerKilledClassName(player), 'mr-1'].join(' ')
             const faultsMoreThanThreeClassName = player.faults > 3 ? 'bg-red-800' : 'bg-blue-800'
@@ -270,7 +270,7 @@ export const MafiaReact: FC = () => {
                 <div className='flex lg:flex-row items-center justify-center flex-wrap gap-2'>
                   {state.players.some((x) => x.alive === true && x.role === Roles.DETECTIVE) && isNight && (
                     <Button
-                      className='text-3xl p-0'
+                      className='text-3xl leading-8 p-0'
                       onClick={() => handleFullscreenPlayer(player, index + 1, Roles.DETECTIVE)}
                     >
                       👮
@@ -278,7 +278,7 @@ export const MafiaReact: FC = () => {
                   )}
                   {state.players.some((x) => x.alive === true && x.role === Roles.DON) && isNight && (
                     <Button
-                      className='text-3xl p-0'
+                      className='text-3xl leading-8 p-0'
                       onClick={() => handleFullscreenPlayer(player, index + 1, Roles.DON)}
                     >
                       🐺
@@ -290,7 +290,7 @@ export const MafiaReact: FC = () => {
                     </Button>
                   )}
                   <Button
-                    className='text-3xl p-0'
+                    className='text-3xl leading-8 p-0'
                     onClick={() => {
                       player.alive ? killPlayer(player) : restorePlayer(player)
                     }}
@@ -299,7 +299,7 @@ export const MafiaReact: FC = () => {
                   </Button>
                   {state.players.some((x) => x.alive === true && x.role === Roles.LADY) && isNight && (
                     <Button
-                      className='text-3xl p-0'
+                      className='text-3xl leading-8 p-0'
                       onClick={() => {
                         player.muted ? unmutePlayer(player) : mutePlayer(player)
                       }}
@@ -339,7 +339,7 @@ export const MafiaReact: FC = () => {
               <Button className='px-3 py-2.5' onClick={addPlayer}>
                 +1 гравець
               </Button>
-              <Button className='text-3xl p-0' onClick={handleChangeDayPhase}>
+              <Button className='text-3xl leading-8 p-0' onClick={handleChangeDayPhase}>
                 {isNight ? '🌚' : '🌞'}
               </Button>
               {isNight === false && (
@@ -354,39 +354,39 @@ export const MafiaReact: FC = () => {
           <h2 className='text-2xl font-bold text-center text-black mb-4'>Легенда</h2>
           <div className='flex flex-col gap-2'>
             <div className='flex items-center gap-2'>
-              <span className='text-3xl'>👮</span>
+              <span className='text-3xl leading-8'>👮</span>
               <span>Показати роль Детективу / Шеріфу / Комісару</span>
             </div>
             <div className='flex items-center gap-2'>
-              <span className='text-3xl'>🐺</span>
+              <span className='text-3xl leading-8'>🐺</span>
               <span>Показати роль Дону</span>
             </div>
             <div className='flex items-center gap-2'>
-              <span className='text-3xl'>➡️</span>
+              <span className='text-3xl leading-8'>➡️</span>
               <span>Змінити роль гравця</span>
             </div>
             <div className='flex items-center gap-2'>
-              <span className='text-3xl'>💀</span>
+              <span className='text-3xl leading-8'>💀</span>
               <span>Вбити гравця</span>
             </div>
             <div className='flex items-center gap-2'>
-              <span className='text-3xl'>😇</span>
+              <span className='text-3xl leading-8'>😇</span>
               <span>Відновити гравця</span>
             </div>
             <div className='flex items-center gap-2'>
-              <span className='text-3xl'>🧏</span>
+              <span className='text-3xl leading-8'>🧏</span>
               <span>Розглушити гравця</span>
             </div>
             <div className='flex items-center gap-2'>
-              <span className='text-3xl'>🎤</span>
+              <span className='text-3xl leading-8'>🎤</span>
               <span>Заглушити гравця</span>
             </div>
             <div className='flex items-center gap-2'>
-              <span className='text-3xl'>🌚</span>
+              <span className='text-3xl leading-8'>🌚</span>
               <span>Змінити фазу на день з ночі</span>
             </div>
             <div className='flex items-center gap-2'>
-              <span className='text-3xl'>🌞</span>
+              <span className='text-3xl leading-8'>🌞</span>
               <span>Змінити фазу на ніч з дня</span>
             </div>
           </div>
