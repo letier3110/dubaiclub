@@ -198,6 +198,44 @@ export const MafiaReact: FC = () => {
     })
   }
 
+  const handleAddVote = (player: Player) => {
+    setState((prevState) => {
+      const newState = {
+        ...prevState,
+        players: prevState.players.map((x) => {
+          if (x === player) {
+            return {
+              ...x,
+              votes: x.votes + 1
+            }
+          }
+          return x
+        })
+      }
+      localStorage.setItem('state', JSON.stringify(newState))
+      return newState
+    })
+  }
+
+  const handleRemoveOneVote = (player: Player) => {
+    setState((prevState) => {
+      const newState = {
+        ...prevState,
+        players: prevState.players.map((x) => {
+          if (x === player) {
+            return {
+              ...x,
+              votes: x.votes > 0 ? x.votes - 1 : 0
+            }
+          }
+          return x
+        })
+      }
+      localStorage.setItem('state', JSON.stringify(newState))
+      return newState
+    })
+  }
+
   return (
     <>
       <section className='h-screen'>
@@ -215,7 +253,10 @@ export const MafiaReact: FC = () => {
                 <div className='mb-4 md:mb-0 flex items-center flex-wrap justify-center md:justify-start'>
                   <strong className={playerKilledClassName}>{index + 1}.</strong>
                   <span className={playerKilledClassName}>{isNight ? `${player.role},` : ''}</span>
-                  <span className={playerKilledClassName}>{player.alive ? 'Живий' : 'Мертвий'}{isNight ? '' : ','}</span>
+                  <span className={playerKilledClassName}>
+                    {player.alive ? 'Живий' : 'Мертвий'}
+                    {isNight ? '' : ','}
+                  </span>
                   <span className={playerKilledClassName}>{player.muted ? 'Мовчить,' : ''}</span>
                   {isFaultsMode && isNight === false && (
                     <span className={playerKilledClassName}>Фолів: {player.faults}</span>
@@ -304,13 +345,13 @@ export const MafiaReact: FC = () => {
                       +1 Фол
                     </button>
                   )}
-                  {isFaultsMode === false && isNight === false && player.faults > 0 && (
+                  {isFaultsMode === false && isNight === false && player.votes > 0 && (
                     <button
                       className='inline-block px-6 py-2.5 bg-white text-gray-700 font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-gray-100 hover:shadow-lg focus:bg-gray-100 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-200 active:shadow-lg transition duration-150 ease-in-out mr-4'
                       role='button'
                       data-mdb-ripple='true'
                       data-mdb-ripple-color='light'
-                      onClick={() => handleRemoveOneFault(player)}
+                      onClick={() => handleRemoveOneVote(player)}
                     >
                       -1 Голос
                     </button>
@@ -321,7 +362,7 @@ export const MafiaReact: FC = () => {
                       role='button'
                       data-mdb-ripple='true'
                       data-mdb-ripple-color='light'
-                      onClick={() => handleAddFault(player)}
+                      onClick={() => handleAddVote(player)}
                     >
                       +1 Голос
                     </button>
@@ -353,15 +394,17 @@ export const MafiaReact: FC = () => {
               >
                 Ввімкнути {isNight ? 'День' : 'Ніч'}
               </button>
-              {isNight === false && (<button
-                className='inline-block px-6 py-2.5 bg-white text-gray-700 font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-gray-100 hover:shadow-lg focus:bg-gray-100 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-200 active:shadow-lg transition duration-150 ease-in-out mr-4'
-                role='button'
-                data-mdb-ripple='true'
-                data-mdb-ripple-color='light'
-                onClick={handleChangeFaultsMode}
-              >
-                {isFaultsMode ? 'Сховати' : 'Показати'} фоли
-              </button>)}
+              {isNight === false && (
+                <button
+                  className='inline-block px-6 py-2.5 bg-white text-gray-700 font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-gray-100 hover:shadow-lg focus:bg-gray-100 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-200 active:shadow-lg transition duration-150 ease-in-out mr-4'
+                  role='button'
+                  data-mdb-ripple='true'
+                  data-mdb-ripple-color='light'
+                  onClick={handleChangeFaultsMode}
+                >
+                  {isFaultsMode ? 'Сховати' : 'Показати'} фоли
+                </button>
+              )}
             </div>
           </div>
         </div>
