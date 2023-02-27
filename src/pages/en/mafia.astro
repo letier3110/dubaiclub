@@ -2,11 +2,13 @@
 import { t, changeLanguage } from "i18next";
 import Layout from "../../layouts/Layout.astro";
 import Card from "../../components/Card.astro";
+import { LanguageSelector } from "astro-i18next/components";
 
 changeLanguage("en");
 ---
 
 <Layout title={t('site.title')}>
+  <LanguageSelector showFlag={true} class='my-select-class' />
   <main>
     <h1>
       <a class='header-link' href='/'>
@@ -33,6 +35,11 @@ changeLanguage("en");
       <br /><br />
       <a href={t('mafia.locationUrl')}>{t('mafia.locationUrl')}</a>
     </p>
+    <p class='instructions'>
+      <a href={'/mafia/app'}>
+        <code>Застосунок для ведучого</code>
+      </a>
+    </p>
   </main>
 </Layout>
 
@@ -43,7 +50,7 @@ changeLanguage("en");
     max-width: 60ch;
   }
   h1 {
-    font-size: 3rem;
+    font-size: 2.6rem;
     font-weight: 800;
     margin: 0;
   }

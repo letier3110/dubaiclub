@@ -3,7 +3,8 @@
     "title": "Dubai Open Club - socialization platform for ukranians."
   },
   "home": {
-    "title": "Dubai Open Club EN",
+    "title": "Dubai Open Club",
+    "nothingNew": "There are currently no scheduled events, but there will be soon!",
     "intro": {
       "part1": "We welcome our friends to socialize and have a good time with the Ukrainian community in",
       "part2": "Dubai",
@@ -12,6 +13,10 @@
     "mafiaCard": {
       "title": "Mafia and Board Games",
       "body": "A meet-and-greet where we will talk, play games (mafia, uno, alias, etc.) and just have a good time"
+    },
+    "volleyballCard": {
+      "title": "Volleyball",
+      "body": "Sun, beach and volleyball!"
     },
     "cashflowCard": {
       "title": "Cashflow",

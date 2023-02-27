@@ -1,18 +1,29 @@
 ---
 import { t, changeLanguage } from "i18next";
+import telegram from "../assets/telegram.svg";
 import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
-import { LanguageSelector } from 'astro-i18next/components'
+import { LanguageSelector } from "astro-i18next/components";
+
+changeLanguage("uk");
+
+const TELEGRAM_URL = "https://t.me/CashFlowDubaiPro";
 ---
 
 <Layout title={t('site.title')}>
   <LanguageSelector showFlag={true} class='my-select-class' />
   <main>
-    <h1>
+    <div class='header'>
       <a class='header-link' href='/'>
-        <span class='text-gradient'><span>&larr;</span>{t('cashflow.title')}</span>
+        <h1>
+          <span class='text-gradient'><span>&larr;</span>{t('cashflow.title')}</span>
+        </h1>
       </a>
-    </h1>
+      <div class='socialContainer'>
+        <a class='social' href={TELEGRAM_URL} target='_blank' rel='noreferrer'>
+          <img src={telegram} alt='telegram' />
+        </a>
+      </div>
+    </div>
     <p class='instructions'>
       {t('cashflow.format')}
       <br /><br />
@@ -44,6 +55,27 @@ import { LanguageSelector } from 'astro-i18next/components'
     font-size: 3rem;
     font-weight: 800;
     margin: 0;
+  }
+  .socialContainer {
+    display: flex;
+    gap: 12px;
+  }
+  .social {
+    background-color: #fff;
+
+    width: 48px;
+    height: 48px;
+    border: 1px solid black;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
   .header-link {
     color: inherit;

@@ -1,10 +1,10 @@
 ---
 import { t, changeLanguage } from "i18next";
-import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
+import Layout from "../../layouts/Layout.astro";
+import Card from "../../components/Card.astro";
 import { LanguageSelector } from "astro-i18next/components";
 
-changeLanguage("uk");
+changeLanguage("en");
 ---
 
 <Layout title={t('site.title')}>
@@ -12,35 +12,33 @@ changeLanguage("uk");
   <main>
     <h1>
       <a class='header-link' href='/'>
-        <span class='text-gradient'><span>&larr;</span>{t('lila.title')}</span>
+        <span class='text-gradient'><span>&larr;</span>{t('paint.title')}</span>
       </a>
     </h1>
     <p class='instructions'>
-      {t('lila.format')}
+      {t('paint.format')}
       <br /><br />
-      {t('lila.part1')}
+      {t('paint.part1')}
       <br /><br />
-      {t('lila.part2')}
+      {t('paint.part2')}
       <br /><br />
-      {t('lila.part3')}
+      {t('paint.part3')}
       <br /><br />
-      {t('lila.part4')}
+      {t('paint.part4')}
       <br /><br />
-      {t('lila.part5')}
+      {t('paint.part5')}
       <br /><br />
-      {t('lila.part6')}
+      {t('paint.part6')}
       <br /><br />
-      {t('lila.part7')}
+      {t('paint.part7')}
       <br /><br />
-      {t('lila.part8')}
+      <a href={t('paint.part8')} target='_blank' rel='noopener noreferrer'>{t('paint.part8')}</a>
       <br /><br />
-      {t('lila.part9')}
+      {t('paint.part9')}
       <br /><br />
-      {t('lila.part10')}
+      <a href={t('paint.part10')} target='_blank' rel='noopener noreferrer'>{t('paint.part10')}</a>
       <br /><br />
-      {t('lila.part11')}
-      <br /><br />
-      {t('lila.part12')}
+      {t('paint.part11')}
     </p>
   </main>
 </Layout>

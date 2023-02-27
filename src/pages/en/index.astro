@@ -4,18 +4,18 @@ import Layout from "../../layouts/Layout.astro";
 import Card from "../../components/Card.astro";
 import dataJson from "../../data/calendar.json";
 import telegram from "../../assets/telegram.svg";
-// import twitter from '../../assets/twitter.svg'
-// import instagram from '../../assets/instagram.svg'
 import CalendarEntry from "../../components/CalendarEntry.astro";
 import { LanguageSelector } from "astro-i18next/components";
 
 changeLanguage("en");
 
 const TELEGRAM_URL = "https://t.me/chatdubaiopenclub";
+const pastEvents = dataJson.filter((x) => Date.now() >= new Date(x.date).getTime());
+const upcomingEvents = dataJson.filter((x) => Date.now() < new Date(x.date).getTime());
 ---
 
 <Layout title={t('site.title')}>
-  <LanguageSelector showFlag={true} class="my-select-class" />
+  <LanguageSelector showFlag={true} class='my-select-class' />
   <main>
     <div class='header'>
       <h1><span class='text-gradient'>Dubai Open Club</span></h1>
@@ -23,9 +23,6 @@ const TELEGRAM_URL = "https://t.me/chatdubaiopenclub";
         <a class='social' href={TELEGRAM_URL} target='_blank' rel='noreferrer'>
           <img src={telegram} alt='telegram' />
         </a>
-        <!-- <a class='social' href={INSTAGRAM_URL} target='_blank' rel='noreferrer'>
-					<img src={instagram} alt='instagram' />
-				</a> -->
       </div>
     </div>
     <p class='instructions'>
@@ -36,19 +33,28 @@ const TELEGRAM_URL = "https://t.me/chatdubaiopenclub";
     <ul role='list' class='link-card-grid'>
       <Card href='mafia' title={t('home.mafiaCard.title')} body={t('home.mafiaCard.body')} />
       <Card href='cashflow' title={t('home.cashflowCard.title')} body={t('home.cashflowCard.body')} />
+      <Card href='volleyball' title={t('home.volleyball.title')} body={t('home.volleyball.body')} />
+      <Card href='lila' title={t('home.lilaCard.title')} body={t('home.lilaCard.body')} />
+      <Card href='paint' title={t('home.paintCard.title')} body={t('home.paintCard.body')} />
       <Card
         disabled={true}
         href='cinemaclub'
         title={t('home.cinemaClubCard.title')}
         body={t('home.cinemaClubCard.body')}
       />
-      <Card disabled={true} href='culture' title={t('home.cultureCard.title')} body={t('home.cultureCard.body')} />
+      <!-- <Card disabled={true} href='culture' title={t('home.cultureCard.title')} body={t('home.cultureCard.body')} /> -->
     </ul>
     <hr />
     <h2>{t('home.calendarTitle')}</h2>
-    {dataJson.filter((x) => Date.now() < new Date(x.date).getTime()).map((event) => <CalendarEntry event={event} />)}
+    {
+      upcomingEvents.length === 0 ? (
+        <div class="nothingNew">{t('home.nothingNew')}</div>
+      ) : (
+        upcomingEvents.map((event) => <CalendarEntry event={event} />)
+      )
+    }
     <h5>{t('home.calendarOld')}</h5>
-    {dataJson.filter((x) => Date.now() >= new Date(x.date).getTime()).map((event) => <CalendarEntry event={event} />)}
+    {pastEvents.map((event) => <CalendarEntry event={event} />)}
   </main>
 </Layout>
 
@@ -58,10 +64,21 @@ const TELEGRAM_URL = "https://t.me/chatdubaiopenclub";
     padding: 1.5rem;
     max-width: 60ch;
   }
+  hr {
+    margin-top: 8px;
+  }
   h1 {
     font-size: 3rem;
     font-weight: 800;
     margin: 0;
+  }
+  .nothingNew {
+    margin: 1rem 0;
+    padding: 2rem;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: start;
   }
   .socialContainer {
     display: flex;

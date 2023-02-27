@@ -1,46 +1,41 @@
 ---
 import { t, changeLanguage } from "i18next";
-import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
-import { LanguageSelector } from "astro-i18next/components";
+import telegram from "../../assets/telegram.svg";
+import Layout from "../../layouts/Layout.astro";
 
-changeLanguage("uk");
+changeLanguage("en");
+
+const TELEGRAM_URL = "https://t.me/+ysKpVCq34Sw4ZWMy";
 ---
 
 <Layout title={t('site.title')}>
-  <LanguageSelector showFlag={true} class='my-select-class' />
   <main>
-    <h1>
+    <div class='header'>
       <a class='header-link' href='/'>
-        <span class='text-gradient'><span>&larr;</span>{t('lila.title')}</span>
+        <h1>
+          <span class='text-gradient'><span>&larr;</span>{t('volleyball.title')}</span>
+        </h1>
       </a>
-    </h1>
+      <div class='socialContainer'>
+        <a class='social' href={TELEGRAM_URL} target='_blank' rel='noreferrer'>
+          <img src={telegram} alt='telegram' />
+        </a>
+      </div>
+    </div>
     <p class='instructions'>
-      {t('lila.format')}
+      {t('volleyball.format')}
       <br /><br />
-      {t('lila.part1')}
+      {t('volleyball.part1')}
       <br /><br />
-      {t('lila.part2')}
+      {t('volleyball.part2')}
       <br /><br />
-      {t('lila.part3')}
+      {t('volleyball.part3')}
       <br /><br />
-      {t('lila.part4')}
+      {t('volleyball.part4')}
       <br /><br />
-      {t('lila.part5')}
+      {t('volleyball.part5')}
       <br /><br />
-      {t('lila.part6')}
-      <br /><br />
-      {t('lila.part7')}
-      <br /><br />
-      {t('lila.part8')}
-      <br /><br />
-      {t('lila.part9')}
-      <br /><br />
-      {t('lila.part10')}
-      <br /><br />
-      {t('lila.part11')}
-      <br /><br />
-      {t('lila.part12')}
+      {t('volleyball.part6')}
     </p>
   </main>
 </Layout>
@@ -52,7 +47,7 @@ changeLanguage("uk");
     max-width: 60ch;
   }
   h1 {
-    font-size: 2.6rem;
+    font-size: 3rem;
     font-weight: 800;
     margin: 0;
   }
