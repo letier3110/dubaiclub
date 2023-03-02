@@ -1,10 +1,17 @@
 [
   {
-    "id": "19",
+    "id": "20",
     "date": "2023-03-05",
     "time": "10:00",
     "location": "ще не визначено: La mer / Kite beach / Black Palace beach",
     "title": "volleyballIn"
+  },
+  {
+    "id": "19",
+    "date": "2023-03-03",
+    "time": "19:00",
+    "location": "Dubai Open Club",
+    "title": "mafiaIn"
   },
   {
     "id": "18",
