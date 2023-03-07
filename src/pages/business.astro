@@ -1,0 +1,109 @@
+---
+import { t, changeLanguage } from "i18next";
+import telegram from "../assets/telegram.svg";
+import Layout from "../layouts/Layout.astro";
+import { LanguageSelector } from "astro-i18next/components";
+
+changeLanguage("uk");
+
+const TELEGRAM_URL = "https://t.me/+Jm9gZi4wDPoxYTMy";
+---
+
+<Layout title={t('site.title')}>
+  <LanguageSelector showFlag={true} class='my-select-class' />
+  <main>
+    <div class='header'>
+      <a class='header-link' href='/'>
+        <h1>
+          <span class='text-gradient'><span>&larr;</span>{t('business.title')}</span>
+        </h1>
+      </a>
+      <div class='socialContainer'>
+        <a class='social' href={TELEGRAM_URL} target='_blank' rel='noreferrer'>
+          <img src={telegram} alt='telegram' />
+        </a>
+      </div>
+    </div>
+    <p class='instructions'>
+      {t('business.format')}
+      <br /><br />
+      {t('business.part1')}
+      <br /><br />
+      {t('business.part2')}
+      <br /><br />
+      {t('business.part3')}
+      <br /><br />
+      {t('business.part4')}
+    </p>
+  </main>
+</Layout>
+
+<style>
+  main {
+    margin: auto;
+    padding: 1.5rem;
+    max-width: 60ch;
+  }
+  h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin: 0;
+  }
+  .socialContainer {
+    display: flex;
+    gap: 12px;
+  }
+  .social {
+    background-color: #fff;
+
+    width: 48px;
+    height: 48px;
+    border: 1px solid black;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .header-link {
+    color: inherit;
+    text-decoration: none;
+  }
+  .text-gradient {
+    background-image: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400%;
+    background-position: 0%;
+  }
+  .instructions {
+    line-height: 1.6;
+    margin: 1rem 0;
+    border: 1px solid rgba(var(--accent), 25%);
+    background-color: white;
+    padding: 1rem;
+    border-radius: 0.4rem;
+  }
+  .instructions code {
+    font-size: 0.875em;
+    font-weight: bold;
+    background: rgba(var(--accent), 12%);
+    color: rgb(var(--accent));
+    border-radius: 4px;
+    padding: 0.3em 0.45em;
+  }
+  .instructions strong {
+    color: rgb(var(--accent));
+  }
+  .link-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+    gap: 1rem;
+    padding: 0;
+  }
+</style>
