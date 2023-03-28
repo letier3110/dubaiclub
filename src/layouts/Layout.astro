@@ -1,56 +1,91 @@
 ---
-import i18next from "i18next";
-import { HeadHrefLangs } from "astro-i18next/components";
+import i18next from 'i18next'
+import { HeadHrefLangs } from 'astro-i18next/components'
 export interface Props {
-	title: string;
-	isNoFooter?: boolean;
+  title: string
+  isNoFooter?: boolean
 }
 
-const { title, isNoFooter = false } = Astro.props;
+const { title, isNoFooter = false } = Astro.props
 ---
 
 <!DOCTYPE html>
 <html lang={i18next.language}>
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-		<HeadHrefLangs />
-	</head>
-	<body>
-		<slot />
-		{!isNoFooter && (<footer>Built with <a class="nolink" href="/admin💙">💙</a> by <a href="https://github.com/letier3110">letier</a></footer>)}
-	</body>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width' />
+    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+    <meta name='generator' content={Astro.generator} />
+    <link rel='preconnect' href='https://fonts.googleapis.com' />
+    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+    <link
+      href='https://fonts.googleapis.com/css2?family=Bona+Nova:ital,wght@0,400;0,700;1,400&display=swap'
+      rel='stylesheet'
+    />
+    <title>{title}</title>
+    <HeadHrefLangs />
+  </head>
+  <body>
+    <slot />
+    {
+      !isNoFooter && (
+        <footer>
+          Built with{' '}
+          <a class='nolink' href='/admin💙'>
+            💙
+          </a>{' '}
+          by <a href='https://github.com/letier3110'>letier</a>
+        </footer>
+      )
+    }
+    <style is:global>
+			* {
+				font-family: 'Bona Nova', serif;
+			}
+      :root {
+        --accent: 124, 58, 237;
+        --accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
+      }
+      ::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+      }
+      ::-webkit-scrollbar-thumb {
+        -webkit-box-shadow: inset 0px 0px 0px 0px rgba(255, 255, 255, 1) !important;
+        background: linear-gradient(#1f1f1f 2%, #1f1f1f 2%);
+        border-radius: 5px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::selection {
+        color: rgba(31, 31, 31, 1);
+        background-color: rgba(228, 228, 228, 1);
+      }
+      html {
+        
+        background-color: rgba(0, 0, 0, 0);
+      }
+      code {
+        font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono,
+          Courier New, monospace;
+      }
+      footer {
+        margin-top: 56px;
+        font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono,
+          Courier New, monospace;
+        text-align: center;
+      }
+      footer a {
+        line-height: 1.4;
+        border-radius: 0.35rem;
+        color: #111;
+        opacity: 0.8;
+      }
+      .nolink {
+        font-size: 24px;
+        text-decoration: none;
+      }
+    </style>
+  </body>
 </html>
-<style is:global>
-	:root {
-		--accent: 124, 58, 237;
-		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background-color: #f0f0f0;
-	}
-	code {
-		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-			Bitstream Vera Sans Mono, Courier New, monospace;
-	}
-	footer {
-		margin-top: 56px;
-		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-			Bitstream Vera Sans Mono, Courier New, monospace;
-			text-align: center;
-	}
-	footer a {
-		line-height: 1.4;
-		border-radius: 0.35rem;
-		color: #111;
-		opacity: 0.8;
-	}
-	.nolink {
-		font-size: 24px;
-		text-decoration: none;
-	}
-</style>

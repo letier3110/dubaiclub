@@ -1,21 +1,200 @@
 ---
-import { t, changeLanguage } from "i18next";
-import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
-import dataJson from "../data/calendar.json";
-import telegram from "../assets/telegram.svg";
-import CalendarEntry from "../components/CalendarEntry.astro";
-import { LanguageSelector } from "astro-i18next/components";
+import { t, changeLanguage } from 'i18next'
+import Layout from '../layouts/Layout.astro'
+import Card from '../components/Card.astro'
+import dataJson from '../data/calendar.json'
+import telegram from '../assets/telegram.svg'
+import telegramWhite from '../assets/telegramWhite.svg'
+import border from '../assets/border.svg'
+import star from '../assets/star.png'
+import mafia1 from '../assets/mafia1.jpeg'
+import mafia2 from '../assets/mafia2.jpeg'
+import mafia3 from '../assets/mafia3.jpeg'
+import mafia4 from '../assets/mafia4.jpeg'
+import mafia5 from '../assets/mafia5.jpeg'
+import volleyball2 from '../assets/volleyball2.jpeg'
+import handpan1 from '../assets/handpan1.jpeg'
+import handpan2 from '../assets/handpan2.jpeg'
+import cashflow1 from '../assets/cashflow1.jpeg'
+import monopoly1 from '../assets/monopoly1.jpeg'
+import hiking1 from '../assets/hiking1.jpeg'
+import CalendarEntry from '../components/CalendarEntry.astro'
+import { LanguageSelector } from 'astro-i18next/components'
 
-changeLanguage("uk");
+changeLanguage('uk')
 
-const TELEGRAM_URL = "https://t.me/chatdubaiopenclub";
-const pastEvents = dataJson.filter((x) => Date.now() >= new Date(x.date).getTime());
-const upcomingEvents = dataJson.filter((x) => Date.now() < new Date(x.date).getTime());
+const TELEGRAM_URL = 'https://t.me/chatdubaiopenclub'
+const pastEvents = dataJson.filter((x) => Date.now() >= new Date(x.date).getTime())
+const upcomingEvents = dataJson.filter((x) => Date.now() < new Date(x.date).getTime())
 ---
 
 <Layout title={t('site.title')}>
-  <LanguageSelector showFlag={true} class='my-select-class' />
+  <!-- <LanguageSelector showFlag={true} class='my-select-class' /> -->
+  <div class='headerBoard'>
+    <img src={star} alt='star' class='s1 abs' />
+    <img src={star} alt='star' class='s2 abs' />
+    <img src={border} alt='border' class='b1 abs' />
+    <img src={border} alt='border' class='b2 abs' />
+    <img src={border} alt='border' class='b3 abs' />
+    <img src={border} alt='border' class='b4 abs' />
+
+    <div>
+      <h1 class='title'>Dubai Open Club</h1>
+    </div>
+    <div class='description'>
+      Проводимо різноманітні заходи та активно працюємо над розвитком співтовариства, розпалюймо вогник української
+      культури та спілкування!
+    </div>
+  </div>
+  <div class='twoBoards'>
+    <div class='navBoardWrapper'>
+      <div>Про нас</div>
+      <div>Розклад івентів</div>
+      <div>Відгуки</div>
+      <div>Контакти</div>
+    </div>
+    <div class='linkBoardWrapper'>
+      <a href={TELEGRAM_URL} target='_blank' rel='noreferrer' class='linkBoard'>
+        <span class='outer'>Доєднатись до спільноти <img src={telegramWhite} alt='telegram' /></span>
+        <div class='marquee'>
+          <div class='inner'>
+            <span>Доєднатись до спільноти <img src={telegramWhite} alt='telegram' /></span>
+            <span>Доєднатись до спільноти <img src={telegramWhite} alt='telegram' /></span>
+            <span>Доєднатись до спільноти <img src={telegramWhite} alt='telegram' /></span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class='galleryLine desktop_flex'>
+    <div class='col'>
+      <div class='cell'>
+        <img src={mafia4} alt='mafia4' class='cellPhoto' />
+      </div>
+    </div>
+    <div class='col'>
+      <div class='cell'>
+        <img src={mafia2} alt='mafia2' class='cellPhoto' />
+      </div>
+      <div class='cell'>Тут може бути ваше фото!</div>
+    </div>
+    <div class='col2'>
+      <div class='cell'>
+        <img src={handpan2} alt='handpan2' class='cellPhoto' />
+      </div>
+    </div>
+  </div>
+  <div class='galleryLine desktop_flex'>
+    <div class='col'>
+      <div class='cell'>
+        <img src={mafia5} alt='mafia5' class='cellPhoto' />
+      </div>
+      <div class='cell'>Чекаємо на вас!</div>
+    </div>
+    <div class='col'>
+      <div class='cell'>
+        <img src={volleyball2} alt='volleyball2' class='cellPhoto' />
+      </div>
+    </div>
+    <div class='col'>
+      <div class='cell'>
+        <img src={handpan1} alt='handpan1' class='cellPhoto' />
+      </div>
+    </div>
+    <div class='col'>
+      <div class='cell'>
+        <img src={mafia3} alt='mafia3' class='cellPhoto' />
+      </div>
+      <div class='cell'>
+        <img src={cashflow1} alt='cashflow1' class='cellPhoto' />
+      </div>
+    </div>
+  </div>
+  <div class='galleryLine desktop_flex'>
+    <div class='col2'>
+      <div class='cell'>
+        <img src={mafia1} alt='mafia1' class='cellPhoto' />
+      </div>
+    </div>
+    <div class='col'>
+      <div class='cell'>
+        <img src={monopoly1} alt='monopoly1' class='cellPhoto' />
+      </div>
+    </div>
+    <div class='col'>
+      <div class='cell'>
+        <img src={hiking1} alt='hiking1' class='cellPhoto' />
+      </div>
+    </div>
+  </div>
+
+  <div class='galleryLine mobile_flex'>
+    <div class='col'>
+      <div class='cell'>
+        <img src={mafia4} alt='mafia4' class='cellPhoto' />
+      </div>
+    </div>
+  </div>
+  <div class='galleryLine mobile_flex'>
+    <div class='col'>
+      <div class='cell'>
+        <img src={handpan2} alt='handpan2' class='cellPhoto' />
+      </div>
+    </div>
+    <div class='col'>
+      <div class='cell'>Тут може бути ваше фото!</div>
+      <div class='cell'>
+        <img src={mafia2} alt='mafia2' class='cellPhoto' />
+      </div>
+    </div>
+  </div>
+  <div class='galleryLine mobile_flex'>
+    <div class='col'>
+      <div class='cell'>
+        <img src={mafia5} alt='mafia5' class='cellPhoto' />
+      </div>
+      <div class='cell'>Чекаємо на вас!</div>
+    </div>
+    <div class='col'>
+      <div class='cell'>
+        <img src={volleyball2} alt='volleyball2' class='cellPhoto' />
+      </div>
+    </div>
+  </div>
+  <div class='galleryLine mobile_flex'>
+    <div class='col'>
+      <div class='cell'>
+        <img src={handpan1} alt='handpan1' class='cellPhoto' />
+      </div>
+    </div>
+    <div class='col'>
+      <div class='cell'>
+        <img src={mafia3} alt='mafia3' class='cellPhoto' />
+      </div>
+      <div class='cell'>
+        <img src={cashflow1} alt='cashflow1' class='cellPhoto' />
+      </div>
+    </div>
+  </div>
+  <div class='galleryLine mobile_flex'>
+    <div class='col2'>
+      <div class='cell'>
+        <img src={mafia1} alt='mafia1' class='cellPhoto' />
+      </div>
+    </div>
+  </div>
+  <div class='galleryLine mobile_flex'>
+    <div class='col'>
+      <div class='cell'>
+        <img src={monopoly1} alt='monopoly1' class='cellPhoto' />
+      </div>
+    </div>
+    <div class='col'>
+      <div class='cell'>
+        <img src={hiking1} alt='hiking1' class='cellPhoto' />
+      </div>
+    </div>
+  </div>
   <main>
     <div class='header'>
       <h1><span class='text-gradient'>Dubai Open Club</span></h1>
@@ -50,7 +229,7 @@ const upcomingEvents = dataJson.filter((x) => Date.now() < new Date(x.date).getT
     <h2>{t('home.calendarTitle')}</h2>
     {
       upcomingEvents.length === 0 ? (
-        <div class="nothingNew">{t('home.nothingNew')}</div>
+        <div class='nothingNew'>{t('home.nothingNew')}</div>
       ) : (
         upcomingEvents.map((event) => <CalendarEntry event={event} />)
       )
@@ -73,6 +252,18 @@ const upcomingEvents = dataJson.filter((x) => Date.now() < new Date(x.date).getT
     font-size: 3rem;
     font-weight: 800;
     margin: 0;
+  }
+  .headerBoard {
+    position: relative;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 48px;
+  }
+  .headerContent {
+    position: relative;
   }
   .nothingNew {
     margin: 1rem 0;
@@ -134,5 +325,310 @@ const upcomingEvents = dataJson.filter((x) => Date.now() < new Date(x.date).getT
     grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
     gap: 1rem;
     padding: 0;
+  }
+  .b1 {
+    top: 20px;
+    left: 20px;
+  }
+  .b2 {
+    top: 20px;
+    right: 20px;
+    rotate: 90deg;
+  }
+  .b3 {
+    bottom: 20px;
+    right: 20px;
+    rotate: 180deg;
+  }
+  .b4 {
+    bottom: 20px;
+    left: 20px;
+    rotate: 270deg;
+  }
+  .s1 {
+    bottom: 60px;
+    left: 100px;
+    width: 30px;
+    rotate: 135deg;
+  }
+  .s2 {
+    bottom: 60px;
+    right: 100px;
+    width: 40px;
+    rotate: 90deg;
+  }
+  .abs {
+    position: absolute;
+  }
+  .title {
+    text-size-adjust: auto;
+    transform-origin: center center;
+    font-size: 5em;
+    line-height: 50px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  .description {
+    text-size-adjust: auto;
+    transform-origin: center center;
+    line-height: 14px;
+    max-width: 620px;
+    text-align: center;
+  }
+  .twoBoards {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    width: calc(100% - 40px);
+    margin: 0px 20px;
+  }
+  .navBoardWrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    height: 40px;
+    border-width: 2px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    background-position: center center;
+    border-color: #1f1f1f;
+    border-style: solid;
+  }
+  .linkBoardWrapper {
+    position: relative;
+    height: 40px;
+
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: bold;
+
+    border-radius: 10px;
+    background-color: #1f1f1f;
+    background-position: center center;
+    border-color: transparent;
+    border-style: solid;
+    transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out, border-color 0.1s ease-in-out;
+    color: #fff;
+  }
+  .linkBoardWrapper span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    color: #fff;
+  }
+  .marquee {
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: none;
+    overflow: hidden;
+  }
+  .inner {
+    display: flex;
+    gap: 12px;
+    position: absolute;
+    top: 0px;
+    margin: 0;
+    line-height: 40px;
+    text-align: center;
+    -moz-transform: translateX(0%);
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+    -moz-animation: scroll-left 6s linear infinite;
+    -webkit-animation: scroll-left 6s linear infinite;
+    animation: scroll-left 6s linear infinite;
+  }
+  .inner span {
+    width: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    color: #fff;
+  }
+  .linkBoardWrapper:hover .linkBoard .marquee {
+    display: flex;
+  }
+  .linkBoardWrapper:hover .linkBoard .outer {
+    display: none;
+  }
+  @-moz-keyframes scroll-left {
+    0% {
+      -moz-transform: translateX(0%);
+    }
+    100% {
+      -moz-transform: translateX(-50%);
+    }
+  }
+
+  @-webkit-keyframes scroll-left {
+    0% {
+      -webkit-transform: translateX(0%);
+    }
+    100% {
+      -webkit-transform: translateX(-50%);
+    }
+  }
+
+  @keyframes scroll-left {
+    0% {
+      -moz-transform: translateX(0%);
+      -webkit-transform: translateX(0%);
+      transform: translateX(0%);
+    }
+    100% {
+      -moz-transform: translateX(-34.3%);
+      -webkit-transform: translateX(-34.3%);
+      transform: translateX(-34.3%);
+    }
+  }
+  .galleryLine {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    width: calc(100% - 40px);
+    margin: 0px 20px;
+    height: 374px;
+    margin-top: 12px;
+  }
+  .col05 {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 12px;
+    height: 177px;
+    border: none;
+    border-radius: 10px;
+    background-position: center center;
+  }
+  .col {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 12px;
+    height: 374px;
+    border: none;
+    border-radius: 10px;
+    background-position: center center;
+  }
+  .col2 {
+    flex: 2.07;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    height: 374px;
+    border: none;
+    border-radius: 10px;
+    background-position: center center;
+  }
+  .cell {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    height: 100%;
+    border: none;
+    border-radius: 10px;
+    background-position: center center;
+    /* background-color: red; */
+    overflow: hidden;
+  }
+  .cellPhoto {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.5s ease-in-out;
+    transform: scale(1);
+  }
+  .cell:hover .cellPhoto {
+    transform: scale(1.2);
+  }
+  .mobile,
+  .mobile_flex {
+    display: none;
+  }
+  @media only screen and (max-width: 850px) {
+    .title {
+      text-size-adjust: auto;
+      transform-origin: center center;
+      font-size: 4em;
+      line-height: 45px;
+      text-transform: uppercase;
+      text-align: center;
+    } 
+  }
+  @media only screen and (max-width: 600px) {
+    .headerBoard {
+      gap: 24px;
+    }
+    .title {
+      text-size-adjust: auto;
+      transform-origin: center center;
+      font-size: 2.7em;
+      line-height: 50px;
+      text-transform: uppercase;
+      text-align: center;
+    }
+    .description {
+      max-width: 400px;
+    }
+    .s1 {
+      top: 90px;
+      left: 20px;
+      width: 30px;
+      rotate: 135deg;
+    }
+    .s2 {
+      display: none;
+    }
+    .twoBoards {
+      flex-direction: column;
+    }
+    .navBoardWrapper {
+      width: 100%;
+      padding: 20px 0px;
+    }
+    .linkBoardWrapper {
+      width: 100%;
+      padding: 20px 0px;
+      height: 76px;
+      min-height: 76px;
+    }
+    .inner {
+      line-height: 76px;
+    }
+    .inner span {
+      width: 330px;
+    }
+    .marquee {
+      height: 76px;
+    }
+    .linkBoardWrapper span {
+      font-size: 1.5em;
+    }
+    .mobile_flex {
+      display: flex;
+    }
+    .desktop,
+    .desktop_flex {
+      display: none;
+    }
   }
 </style>
