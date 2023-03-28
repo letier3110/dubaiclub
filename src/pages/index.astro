@@ -13,11 +13,15 @@ import mafia3 from '../assets/mafia3.jpeg'
 import mafia4 from '../assets/mafia4.jpeg'
 import mafia5 from '../assets/mafia5.jpeg'
 import volleyball2 from '../assets/volleyball2.jpeg'
+import volleyball3 from '../assets/volleyball3.jpeg'
 import handpan1 from '../assets/handpan1.jpeg'
 import handpan2 from '../assets/handpan2.jpeg'
 import cashflow1 from '../assets/cashflow1.jpeg'
 import monopoly1 from '../assets/monopoly1.jpeg'
 import hiking1 from '../assets/hiking1.jpeg'
+import trip1 from '../assets/trip1.jpeg'
+import trip2 from '../assets/trip2.jpeg'
+import trip3 from '../assets/trip3.jpeg'
 import CalendarEntry from '../components/CalendarEntry.astro'
 import { LanguageSelector } from 'astro-i18next/components'
 
@@ -195,6 +199,73 @@ const upcomingEvents = dataJson.filter((x) => Date.now() < new Date(x.date).getT
       </div>
     </div>
   </div>
+  <div class="brSection">
+
+  </div>
+  <div class="nextSection">
+    <div class="title2">
+      Чим займається наша спільнота
+    </div>
+  </div>
+  <div class="galleryLine2">
+    <div class='col'>
+      <div class='cell'>
+        <img src={trip1} alt='trip1' class='cellPhoto' />
+      </div>
+    </div>
+    <div class='col'>
+      <div class='textCell'>
+        <div class="textCellHeader">Спілкування та настільні ігри на віллі</div>
+        <div class="innerTextCell">
+          <div>Зустріч-знайомство, де ми поспілкуємось, граємо в ігри (мафія, уно, аліас, тощо) та просто гарно проведимо час</div>
+          <div class="textCellFooter">Ну і фоточки для соц.мереж, звісно, будуть йой най буде</div>
+        </div>
+      </div>
+    </div>
+    <div class='col'>
+      <div class='cell'>
+        <img src={volleyball3} alt='volleyball3' class='cellPhoto' />
+      </div>
+    </div>
+    <div class='col'>
+      <div class='textCell'>
+        <div class="textCellHeader">Пляжний волейбол</div>
+        <div class="innerTextCell">
+          <div>Пляж, сонце і волейбол!</div>
+          <div>Навички гри не важливі, адже у всіх різний досвід, головне - отримати задоволення від гри та зустрічі з новими друзями🤍</div>
+          <div class="textCellFooter">Ну і фоточки для соц.мереж, звісно, будуть йой</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="galleryLine2">
+    <div class='col'>
+      <div class='cell'>
+        <img src={trip3} alt='trip3' class='cellPhoto' />
+      </div>
+    </div>
+    <div class='col'>
+      <div class='textCell'>
+        <div class="textCellHeader">Поїздки у наздвичайні місця ОАЕ</div>
+        <div class="innerTextCell">
+          <div>Якщо ви захотіли поїхати в такі нетривіальні місця, то велика ймовірність, що і попутники виявляться цікавими хлопцями - близькими вам за духом</div>
+        </div>
+      </div>
+    </div>
+    <div class='col'>
+      <div class='cell'>
+        <img src={trip2} alt='trip2' class='cellPhoto' />
+      </div>
+    </div>
+    <div class='col'>
+      <div class='textCell'>
+        <div class="textCellHeader">Бізнес зустрічі та воркшопи</div>
+        <div class="innerTextCell">
+          <div>Наші зустрічі надають унікальну можливість обговорити тонкощі ведення бізнесу в ОАЕ та поділитися колективним досвідом. Незалежно від того, чи є ви власником бізнесу, ентузіастом стартапів, чи тим, хто прагне дослідити світ підприємництва, ця група є ідеальною платформою для налагодження контактів, навчання та розвитку.</div>
+        </div>
+      </div>
+    </div>
+  </div>
   <main>
     <div class='header'>
       <h1><span class='text-gradient'>Dubai Open Club</span></h1>
@@ -368,6 +439,25 @@ const upcomingEvents = dataJson.filter((x) => Date.now() < new Date(x.date).getT
     text-transform: uppercase;
     text-align: center;
   }
+  .brSection {
+    height: 2px;
+    width: calc(100% - 40px);
+    margin: 40px 20px;
+    background-color: #000;
+  }
+  .nextSection {
+    width: calc(100% - 40px);
+    margin: 104px 20px 40px 20px;
+  }
+  .title2 {
+    text-size-adjust: auto;
+    transform-origin: center center;
+    font-size: 4.7vw;
+    font-weight: bold;
+    line-height: 50px;
+    text-transform: uppercase;
+    text-align: center;
+  }
   .description {
     text-size-adjust: auto;
     transform-origin: center center;
@@ -498,7 +588,6 @@ const upcomingEvents = dataJson.filter((x) => Date.now() < new Date(x.date).getT
     gap: 1rem;
     width: calc(100% - 40px);
     margin: 0px 20px;
-    height: 374px;
     margin-top: 12px;
   }
   .col05 {
@@ -520,7 +609,6 @@ const upcomingEvents = dataJson.filter((x) => Date.now() < new Date(x.date).getT
     justify-content: center;
     flex-direction: column;
     gap: 12px;
-    height: 374px;
     border: none;
     border-radius: 10px;
     background-position: center center;
@@ -531,7 +619,6 @@ const upcomingEvents = dataJson.filter((x) => Date.now() < new Date(x.date).getT
     align-items: center;
     justify-content: center;
     gap: 12px;
-    height: 374px;
     border: none;
     border-radius: 10px;
     background-position: center center;
@@ -541,6 +628,8 @@ const upcomingEvents = dataJson.filter((x) => Date.now() < new Date(x.date).getT
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    text-align: center;
     gap: 12px;
     height: 100%;
     border: none;
@@ -548,6 +637,36 @@ const upcomingEvents = dataJson.filter((x) => Date.now() < new Date(x.date).getT
     background-position: center center;
     /* background-color: red; */
     overflow: hidden;
+  }
+  .textCell {
+    color: #4c4c4c;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+    text-align: left;
+    gap: 12px;
+    height: 100%;
+    border: none;
+    border-radius: 10px;
+    background-position: center center;
+    /* background-color: red; */
+    overflow: hidden;
+  }
+  .innerTextCell {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .textCellHeader {
+    font-size: 2vw;
+    letter-spacing: 0.2px;
+    line-height: 26px;
+    font-weight: 600;
+  }
+  .textCellFooter {
+    font-weight: 500;
   }
   .cellPhoto {
     width: 100%;
@@ -559,6 +678,21 @@ const upcomingEvents = dataJson.filter((x) => Date.now() < new Date(x.date).getT
   }
   .cell:hover .cellPhoto {
     transform: scale(1.2);
+  }
+  .galleryLine2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    width: calc(100% - 40px);
+    margin: 0px 20px;
+    margin-top: 36px;
+  }
+  .galleryLine, .galleryLine .col, .galleryLine .col2, .col05 {
+    height: 374px;
+  }
+  .galleryLine2, .galleryLine2 .col, .galleryLine2 .col2, .galleryLine2 .col05 {
+    height: 424px;
   }
   .mobile,
   .mobile_flex {
