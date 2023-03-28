@@ -12,11 +12,20 @@ import mafia2 from '../assets/mafia2.jpeg'
 import mafia3 from '../assets/mafia3.jpeg'
 import mafia4 from '../assets/mafia4.jpeg'
 import mafia5 from '../assets/mafia5.jpeg'
+import mafia6 from '../assets/mafia6.jpeg'
+import mafia7 from '../assets/mafia7.jpeg'
+import mafia8 from '../assets/mafia8.jpeg'
+import mafia9 from '../assets/mafia9.jpeg'
+import mafia10 from '../assets/mafia10.jpeg'
+import mafia11 from '../assets/mafia11.jpeg'
 import volleyball2 from '../assets/volleyball2.jpeg'
 import volleyball3 from '../assets/volleyball3.jpeg'
+import volleyball4 from '../assets/volleyball4_c.jpeg'
+import volleyball5 from '../assets/volleyball5_c.jpeg'
 import handpan1 from '../assets/handpan1.jpeg'
 import handpan2 from '../assets/handpan2.jpeg'
 import cashflow1 from '../assets/cashflow1.jpeg'
+import cashflow2 from '../assets/cashflow2.jpeg'
 import monopoly1 from '../assets/monopoly1.jpeg'
 import hiking1 from '../assets/hiking1.jpeg'
 import trip1 from '../assets/trip1.jpeg'
@@ -28,6 +37,8 @@ import { LanguageSelector } from 'astro-i18next/components'
 changeLanguage('uk')
 
 const TELEGRAM_URL = 'https://t.me/chatdubaiopenclub'
+const TELEGRAM_URL_VOLLEYBALL = 'https://t.me/+ysKpVCq34Sw4ZWMy'
+const TELEGRAM_URL_CASHFLOW = 'https://t.me/CashFlowDubaiPro'
 const pastEvents = dataJson.filter((x) => Date.now() >= new Date(x.date).getTime())
 const upcomingEvents = dataJson.filter((x) => Date.now() < new Date(x.date).getTime())
 ---
@@ -57,7 +68,7 @@ const upcomingEvents = dataJson.filter((x) => Date.now() < new Date(x.date).getT
       <div>Відгуки</div>
       <div>Контакти</div>
     </div>
-    <div class='linkBoardWrapper'>
+    <div class='linkBoardWrapper flex1'>
       <a href={TELEGRAM_URL} target='_blank' rel='noreferrer' class='linkBoard'>
         <span class='outer'>Доєднатись до спільноти <img src={telegramWhite} alt='telegram' /></span>
         <div class='marquee'>
@@ -353,48 +364,175 @@ const upcomingEvents = dataJson.filter((x) => Date.now() < new Date(x.date).getT
       </div>
     </div>
   </div>
-  <main>
-    <div class='header'>
-      <h1><span class='text-gradient'>Dubai Open Club</span></h1>
-      <div class='socialContainer'>
-        <a class='social' href={TELEGRAM_URL} target='_blank' rel='noreferrer'>
-          <img src={telegram} alt='telegram' />
-        </a>
+  <div class='brSection'></div>
+  <div class='graySection'>
+    <div class='nextSection headerSection'>
+      <img src={border} alt='border' class='b1 abs' />
+      <img src={border} alt='border' class='b2 abs' />
+      <div class='title2'>Наші івенти</div>
+      <div class='description'>приходьте на такі активності:</div>
+    </div>
+    <div class='eventSection gap4'>
+      <div class='textCell gencol flex3'>
+        <div class='gencol gap4'>
+          <div class='eventTitle'>Мафія і Настільні ігри</div>
+          <div class='eventDescription'>
+            Приходьте на нашу круту українську 🇺🇦 вечірку з настольними іграми - мафія, монополія, аліас, та багато
+            інших. Це буде зустріч-знайомство, де ми поспілкуємось, граємо в ігри та просто гарно проведемо час.
+          </div>
+          <div class='eventSize'>
+            <div class='eventLabel'>кількість людей на івенті:</div>
+            <div class='codeWrapper'>12+</div>
+          </div>
+          <div class='eventDate'>
+            <div class='eventLabel'>коли проходить:</div>
+            <div class='eventValue'>Кожна пʼятниця, 19:00</div>
+          </div>
+          <div class='eventLocation'>
+            <div class='eventLabel'>де відбувається:</div>
+            <div class='eventValue'>котедж в Al Barsha South, street 59, Villa 27</div>
+          </div>
+        </div>
+        <div class="col05 width100 mobile_flex">
+          <div class='cell'><img src={mafia7} alt='mafia7' class='cellPhoto' /></div>
+        </div>
+        <div class='gencol width100 gap4'>
+          <div class='eventPrice'>
+            <div class='eventLabel'>варість:</div>
+            <div class='eventValue'>50 AED</div>
+          </div>
+          <div class='linkBoardWrapper'>
+            <a href={TELEGRAM_URL} target='_blank' rel='noreferrer' class='linkBoard'>
+              <span class='outer'>(+) Докладніше</span>
+              <div class='marquee'>
+                <div class='inner'>
+                  <span>(+) Докладніше</span>
+                  <span>(+) Докладніше</span>
+                  <span>(+) Докладніше</span>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class='gencol flex5 desktop_flex'>
+        <!-- <div class='carousel'> -->
+          <div class='cell'><img src={mafia7} alt='mafia7' class='cellPhoto' /></div>
+          <!-- <div class='cell'><img src={mafia8} alt='mafia8' class='cellPhoto' /></div> -->
+          <!-- <div class='cell'><img src={mafia9} alt='mafia9' class='cellPhoto' /></div> -->
+          <!-- <div class='cell'><img src={mafia10} alt='mafia10' class='cellPhoto' /></div> -->
+          <!-- <div class='cell'><img src={mafia11} alt='mafia11' class='cellPhoto' /></div> -->
+        <!-- </div> -->
       </div>
     </div>
-    <p class='instructions'>
-      {t('home.intro.part1')}
-      <strong>{t('home.intro.part2')}</strong>!<br />
-      {t('home.intro.part3')}
-    </p>
-    <ul role='list' class='link-card-grid'>
-      <Card href='mafia' title={t('home.mafiaCard.title')} body={t('home.mafiaCard.body')} />
-      <Card href='cashflow' title={t('home.cashflowCard.title')} body={t('home.cashflowCard.body')} />
-      <Card href='volleyball' title={t('home.volleyballCard.title')} body={t('home.volleyballCard.body')} />
-      <Card href='business' title={t('home.businessCard.title')} body={t('home.businessCard.body')} />
-      <Card href='work' title={t('home.workCard.title')} body={t('home.workCard.body')} />
-      <Card href='lila' title={t('home.lilaCard.title')} body={t('home.lilaCard.body')} />
-      <Card href='paint' title={t('home.paintCard.title')} body={t('home.paintCard.body')} />
-      <Card
-        disabled={true}
-        href='cinemaclub'
-        title={t('home.cinemaClubCard.title')}
-        body={t('home.cinemaClubCard.body')}
-      />
-      <!-- <Card disabled={true} href='culture' title={t('home.cultureCard.title')} body={t('home.cultureCard.body')} /> -->
-    </ul>
-    <hr />
-    <h2>{t('home.calendarTitle')}</h2>
-    {
-      upcomingEvents.length === 0 ? (
-        <div class='nothingNew'>{t('home.nothingNew')}</div>
-      ) : (
-        upcomingEvents.map((event) => <CalendarEntry event={event} />)
-      )
-    }
-    <h5>{t('home.calendarOld')}</h5>
-    {pastEvents.map((event) => <CalendarEntry event={event} />)}
-  </main>
+    <div class='brSection'></div>
+    <div class='eventSection gap4'>
+      <div class='textCell gencol flex3'>
+        <div class='gencol gap4'>
+          <div class='eventTitle'>Пляжний волейбол</div>
+          <div class='eventDescription'>
+            Приготуйтеся до насиченої волейбольної феєрії, яка обіцяє підняти вам настрій та розпалити пристрасть до цього захоплюючого виду спорту! Від ентузіастів волейболу різного віку та рівня майстерності.
+          </div>
+          <div class='eventSize'>
+            <div class='eventLabel'>кількість людей на івенті:</div>
+            <div class='codeWrapper'>6 - 20 людей</div>
+          </div>
+          <div class='eventDate'>
+            <div class='eventLabel'>коли проходить:</div>
+            <div class='eventValue'>Кожна субота, 19:00</div>
+          </div>
+          <div class='eventLocation'>
+            <div class='eventLabel'>де відбувається:</div>
+            <div class='eventValue'>Kite Beach</div>
+          </div>
+        </div>
+        <div class="col05 width100 mobile_flex">
+          <div class='cell'><img src={volleyball5} alt='volleyball5' class='cellPhoto' /></div>
+        </div>
+        <div class='gencol width100 gap4'>
+          <div class='eventPrice'>
+            <div class='eventLabel'>варість:</div>
+            <div class='eventValue'>15 AED</div>
+          </div>
+          <div class='linkBoardWrapper'>
+            <a href={TELEGRAM_URL_VOLLEYBALL} target='_blank' rel='noreferrer' class='linkBoard'>
+              <span class='outer'>(+) Докладніше</span>
+              <div class='marquee'>
+                <div class='inner'>
+                  <span>(+) Докладніше</span>
+                  <span>(+) Докладніше</span>
+                  <span>(+) Докладніше</span>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class='gencol flex5 desktop_flex'>
+        <!-- <div class='carousel'> -->
+          <div class='cell'><img src={volleyball5} alt='volleyball5' class='cellPhoto' /></div>
+        <!-- </div> -->
+      </div>
+    </div>
+    <div class='brSection'></div>
+    <div class='eventSection gap4'>
+      <div class='textCell gencol flex3'>
+        <div class='gencol gap4'>
+          <div class='eventTitle'>Кешфлоу</div>
+          <div class='eventDescription'>
+            Бізнес-тренер з Києва під час гри буде давати підказки, розкривати різні фінансофі фішки і пояснювати ваші дії, щоб ви могли найбільш ефективно вибудовувати фінансові стратегії у реальному житті.
+          </div>
+          <div class='eventSize'>
+            <div class='eventLabel'>кількість людей на івенті:</div>
+            <div class='codeWrapper'>до 10</div>
+          </div>
+          <div class='eventDate'>
+            <div class='eventLabel'>коли проходить:</div>
+            <div class='eventValue'>Кожна неділю</div>
+          </div>
+          <div class='eventLocation'>
+            <div class='eventLabel'>де відбувається:</div>
+            <div class='eventValue'>котедж в Al Barsha South, street 59, Villa 27</div>
+          </div>
+        </div>
+        <div class="col05 width100 mobile_flex">
+          <div class='cell'><img src={cashflow2} alt='cashflow2' class='cellPhoto' /></div>
+        </div>
+        <div class='gencol width100 gap4'>
+          <div class='eventPrice'>
+            <div class='eventLabel'>варість:</div>
+            <div class='eventValue'>100 AED</div>
+          </div>
+          <div class='linkBoardWrapper'>
+            <a href={TELEGRAM_URL_CASHFLOW} target='_blank' rel='noreferrer' class='linkBoard'>
+              <span class='outer'>(+) Докладніше</span>
+              <div class='marquee'>
+                <div class='inner'>
+                  <span>(+) Докладніше</span>
+                  <span>(+) Докладніше</span>
+                  <span>(+) Докладніше</span>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class='gencol flex5 desktop_flex'>
+        <!-- <div class='carousel'> -->
+          <div class='cell'><img src={cashflow2} alt='cashflow2' class='cellPhoto' /></div>
+        <!-- </div> -->
+      </div>
+    </div>
+    <!-- <div class='brSection'></div>
+    <div class='nextSection'>
+      <div class='title2'>Хто ми?</div>
+    </div>
+    <div class='brSection'></div>
+    <div class='nextSection'>
+      <div class='title2'>Відгуки</div>
+    </div> -->
+    <div class='brSection'></div>
+  </div>
 </Layout>
 
 <style>
@@ -532,6 +670,18 @@ const upcomingEvents = dataJson.filter((x) => Date.now() < new Date(x.date).getT
     margin: 40px 20px;
     background-color: #000;
   }
+  .headerSection {
+    position: relative;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .graySection {
+    background-color: #fafafa;
+  }
   .nextSection {
     width: calc(100% - 40px);
     margin: 104px 20px 40px 20px;
@@ -546,6 +696,7 @@ const upcomingEvents = dataJson.filter((x) => Date.now() < new Date(x.date).getT
     text-align: center;
   }
   .description {
+    color: #4c4c4c;
     text-size-adjust: auto;
     transform-origin: center center;
     line-height: 14px;
@@ -578,7 +729,6 @@ const upcomingEvents = dataJson.filter((x) => Date.now() < new Date(x.date).getT
     position: relative;
     height: 40px;
 
-    flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -676,6 +826,86 @@ const upcomingEvents = dataJson.filter((x) => Date.now() < new Date(x.date).getT
     width: calc(100% - 40px);
     margin: 0px 20px;
     margin-top: 12px;
+  }
+  .gencol {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    border: none;
+    border-radius: 10px;
+    background-position: center center;
+  }
+  .eventSection {
+    display: flex;
+    width: calc(100% - 40px);
+    height: 500px;
+    margin: 0px 20px;
+  }
+  .eventTitle {
+    font-size: 1.5em;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+  .eventDescription {
+    color: #4c4c4c;
+  }
+  .eventSize,
+  .eventDate,
+  .eventLocation,
+  .eventPrice {
+    display: flex;
+    align-items: center;
+  }
+  .eventPrice .eventValue {
+    font-size: 2em;
+    font-weight: 500;
+    color: #000;
+  }
+  .eventLabel {
+    font-size: 0.8em;
+    font-weight: 500;
+    text-transform: lowercase;
+    max-width: 140px;
+    min-width: 140px;
+    color: #4c4c4c;
+  }
+  .codeWrapper {
+    padding: 0px 8px;
+    border-width: 2px;
+    border-radius: 10px;
+    background-position: center center;
+    border-color: #1f1f1f;
+    border-style: solid;
+  }
+  .width100 {
+    width: 100%;
+  }
+  .gap1 {
+    gap: 4px;
+  }
+  .gap2 {
+    gap: 8px;
+  }
+  .gap3 {
+    gap: 12px;
+  }
+  .gap4 {
+    gap: 16px;
+  }
+  .gap5 {
+    gap: 20px;
+  }
+  .gap6 {
+    gap: 24px;
+  }
+  .flex1 {
+    flex: 1;
+  }
+  .flex3 {
+    flex: 3;
+  }
+  .flex5 {
+    flex: 5;
   }
   .col05 {
     flex: 1;
@@ -858,6 +1088,9 @@ const upcomingEvents = dataJson.filter((x) => Date.now() < new Date(x.date).getT
     }
     .mobile_flex {
       display: flex;
+    }
+    .eventSection {
+      height: 800px;
     }
     .desktop,
     .desktop_flex {
