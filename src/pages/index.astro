@@ -225,8 +225,7 @@ const upcomingEvents = dataJson.filter((x) => Date.now() < new Date(x.date).getT
         <div class='textCellHeader'>Спілкування та настільні ігри на віллі</div>
         <div class='innerTextCell'>
           <div>
-            Зустріч-знайомство, де ми поспілкуємось, граємо в ігри (мафія, уно, аліас, тощо) та просто гарно проведимо
-            час
+            Зустріч-знайомство, де ми поспілкуємось, пограємо в ігри (мафія, уно, аліас, тощо) та просто гарно проведемо час
           </div>
           <div class='textCellFooter'>Ну і фоточки для соц.мереж, звісно, будуть йой най буде</div>
         </div>
@@ -288,7 +287,7 @@ const upcomingEvents = dataJson.filter((x) => Date.now() < new Date(x.date).getT
     </div>
   </div>
   <div class='galleryLine2 mobile_flex'>
-    <div class='col'>
+    <div class='col desktop_flex'>
       <div class='cell'>
         <img src={trip1} alt='trip1' class='cellPhoto' />
       </div>
@@ -296,6 +295,9 @@ const upcomingEvents = dataJson.filter((x) => Date.now() < new Date(x.date).getT
     <div class='col'>
       <div class='textCell'>
         <div class='textCellHeader'>Спілкування та настільні ігри на віллі</div>
+        <div class="col05 width100 mobile_flex">
+          <div class='cell'><img src={trip1} alt='trip1' class='cellPhoto' /></div>
+        </div>
         <div class='innerTextCell'>
           <div>
             Зустріч-знайомство, де ми поспілкуємось, граємо в ігри (мафія, уно, аліас, тощо) та просто гарно проведимо
@@ -307,7 +309,7 @@ const upcomingEvents = dataJson.filter((x) => Date.now() < new Date(x.date).getT
     </div>
   </div>
   <div class='galleryLine2 mobile_flex'>
-    <div class='col'>
+    <div class='col desktop_flex'>
       <div class='cell'>
         <img src={volleyball3} alt='volleyball3' class='cellPhoto' />
       </div>
@@ -315,6 +317,9 @@ const upcomingEvents = dataJson.filter((x) => Date.now() < new Date(x.date).getT
     <div class='col'>
       <div class='textCell'>
         <div class='textCellHeader'>Пляжний волейбол</div>
+        <div class="col05 width100 mobile_flex">
+          <div class='cell'><img src={volleyball3} alt='volleyball3' class='cellPhoto' /></div>
+        </div>
         <div class='innerTextCell'>
           <div>Пляж, сонце і волейбол!</div>
           <div>
@@ -327,7 +332,7 @@ const upcomingEvents = dataJson.filter((x) => Date.now() < new Date(x.date).getT
     </div>
   </div>
   <div class='galleryLine2 mobile_flex'>
-    <div class='col'>
+    <div class='col desktop_flex'>
       <div class='cell'>
         <img src={trip3} alt='trip3' class='cellPhoto' />
       </div>
@@ -335,6 +340,9 @@ const upcomingEvents = dataJson.filter((x) => Date.now() < new Date(x.date).getT
     <div class='col'>
       <div class='textCell'>
         <div class='textCellHeader'>Поїздки у наздвичайні місця ОАЕ</div>
+        <div class="col05 width100 mobile_flex">
+          <div class='cell'><img src={trip3} alt='trip3' class='cellPhoto' /></div>
+        </div>
         <div class='innerTextCell'>
           <div>
             Якщо ви захотіли поїхати в такі нетривіальні місця, то велика ймовірність, що і попутники виявляться
@@ -345,7 +353,7 @@ const upcomingEvents = dataJson.filter((x) => Date.now() < new Date(x.date).getT
     </div>
   </div>
   <div class='galleryLine2 mobile_flex'>
-    <div class='col'>
+    <div class='col desktop_flex'>
       <div class='cell'>
         <img src={trip2} alt='trip2' class='cellPhoto' />
       </div>
@@ -353,6 +361,9 @@ const upcomingEvents = dataJson.filter((x) => Date.now() < new Date(x.date).getT
     <div class='col'>
       <div class='textCell'>
         <div class='textCellHeader'>Бізнес зустрічі та воркшопи</div>
+        <div class="col05 width100 mobile_flex">
+          <div class='cell'><img src={trip2} alt='trip2' class='cellPhoto' /></div>
+        </div>
         <div class='innerTextCell'>
           <div>
             Наші зустрічі надають унікальну можливість обговорити тонкощі ведення бізнесу в ОАЕ та поділитися
@@ -386,11 +397,11 @@ const upcomingEvents = dataJson.filter((x) => Date.now() < new Date(x.date).getT
           </div>
           <div class='eventDate'>
             <div class='eventLabel'>коли проходить:</div>
-            <div class='eventValue'>Кожна пʼятниця, 19:00</div>
+            <div class='eventValue'>Кожну пʼятниця, 19:00</div>
           </div>
           <div class='eventLocation'>
             <div class='eventLabel'>де відбувається:</div>
-            <div class='eventValue'>котедж в Al Barsha South, street 59, Villa 27</div>
+            <a href="https://maps.app.goo.gl/CLogKLKaFUrRZHCK8?g_st=it" target='_blank' rel='noreferrer' class='eventValue'>котедж в Al Barsha South, street 59, Villa 27</a>
           </div>
         </div>
         <div class="col05 width100 mobile_flex">
@@ -398,7 +409,7 @@ const upcomingEvents = dataJson.filter((x) => Date.now() < new Date(x.date).getT
         </div>
         <div class='gencol width100 gap4'>
           <div class='eventPrice'>
-            <div class='eventLabel'>варість:</div>
+            <div class='eventLabel'>вартість:</div>
             <div class='eventValue'>50 AED</div>
           </div>
           <div class='linkBoardWrapper'>
@@ -431,7 +442,7 @@ const upcomingEvents = dataJson.filter((x) => Date.now() < new Date(x.date).getT
         <div class='gencol gap4'>
           <div class='eventTitle'>Пляжний волейбол</div>
           <div class='eventDescription'>
-            Приготуйтеся до насиченої волейбольної феєрії, яка обіцяє підняти вам настрій та розпалити пристрасть до цього захоплюючого виду спорту! Від ентузіастів волейболу різного віку та рівня майстерності.
+            Приготуйтеся до насиченої волейбольної феєрії, яка обіцяє підняти вам настрій та розпалити пристрасть до цього захоплюючого виду спорту! Наш захід пропонує щось для кожного - для ентузіастів волейболу різного віку та рівня майстерності.
           </div>
           <div class='eventSize'>
             <div class='eventLabel'>кількість людей на івенті:</div>
@@ -439,7 +450,7 @@ const upcomingEvents = dataJson.filter((x) => Date.now() < new Date(x.date).getT
           </div>
           <div class='eventDate'>
             <div class='eventLabel'>коли проходить:</div>
-            <div class='eventValue'>Кожна субота, 19:00</div>
+            <div class='eventValue'>Кожну суботу, 19:00</div>
           </div>
           <div class='eventLocation'>
             <div class='eventLabel'>де відбувається:</div>
@@ -451,7 +462,7 @@ const upcomingEvents = dataJson.filter((x) => Date.now() < new Date(x.date).getT
         </div>
         <div class='gencol width100 gap4'>
           <div class='eventPrice'>
-            <div class='eventLabel'>варість:</div>
+            <div class='eventLabel'>вартість:</div>
             <div class='eventValue'>15 AED</div>
           </div>
           <div class='linkBoardWrapper'>
@@ -488,11 +499,11 @@ const upcomingEvents = dataJson.filter((x) => Date.now() < new Date(x.date).getT
           </div>
           <div class='eventDate'>
             <div class='eventLabel'>коли проходить:</div>
-            <div class='eventValue'>Кожна неділю</div>
+            <div class='eventValue'>Кожну неділю</div>
           </div>
           <div class='eventLocation'>
             <div class='eventLabel'>де відбувається:</div>
-            <div class='eventValue'>котедж в Al Barsha South, street 59, Villa 27</div>
+            <a href="https://maps.app.goo.gl/CLogKLKaFUrRZHCK8?g_st=it" target='_blank' rel='noreferrer' class='eventValue'>котедж в Al Barsha South, street 59, Villa 27</a>
           </div>
         </div>
         <div class="col05 width100 mobile_flex">
@@ -500,7 +511,7 @@ const upcomingEvents = dataJson.filter((x) => Date.now() < new Date(x.date).getT
         </div>
         <div class='gencol width100 gap4'>
           <div class='eventPrice'>
-            <div class='eventLabel'>варість:</div>
+            <div class='eventLabel'>вартість:</div>
             <div class='eventValue'>100 AED</div>
           </div>
           <div class='linkBoardWrapper'>
@@ -1035,16 +1046,30 @@ const upcomingEvents = dataJson.filter((x) => Date.now() < new Date(x.date).getT
     .headerBoard {
       gap: 24px;
     }
+    .title2 {
+      font-size: 2.2em;
+      line-height: 50px;
+    }
+    .headerSection {
+      padding: 0px 20px;
+      height: 120px;
+      margin: 104px 0px 20px 0px;
+      width: 100%;
+    }
     .title {
       text-size-adjust: auto;
       transform-origin: center center;
-      font-size: 2.7em;
+      font-size: 2.2em;
       line-height: 50px;
       text-transform: uppercase;
       text-align: center;
     }
     .description {
-      max-width: 400px;
+      font-size: 0.8em;
+      max-width: 300px;
+    }
+    .navBoardWrapper {
+      font-size: 0.8em;
     }
     .s1 {
       top: 90px;
@@ -1078,7 +1103,7 @@ const upcomingEvents = dataJson.filter((x) => Date.now() < new Date(x.date).getT
       height: 76px;
     }
     .linkBoardWrapper span {
-      font-size: 1.5em;
+      font-size: 1.3em;
     }
     .textCellHeader {
       font-size: 30px;
@@ -1088,6 +1113,12 @@ const upcomingEvents = dataJson.filter((x) => Date.now() < new Date(x.date).getT
     }
     .mobile_flex {
       display: flex;
+    }
+    .galleryLine2,
+    .galleryLine2 .col,
+    .galleryLine2 .col2,
+    .galleryLine2 .col05 {
+      height: inherit;
     }
     .eventSection {
       height: 800px;
