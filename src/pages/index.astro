@@ -199,15 +199,11 @@ const upcomingEvents = dataJson.filter((x) => Date.now() < new Date(x.date).getT
       </div>
     </div>
   </div>
-  <div class="brSection">
-
+  <div class='brSection'></div>
+  <div class='nextSection'>
+    <div class='title2'>Чим займається наша спільнота</div>
   </div>
-  <div class="nextSection">
-    <div class="title2">
-      Чим займається наша спільнота
-    </div>
-  </div>
-  <div class="galleryLine2">
+  <div class='galleryLine2 desktop_flex'>
     <div class='col'>
       <div class='cell'>
         <img src={trip1} alt='trip1' class='cellPhoto' />
@@ -215,10 +211,13 @@ const upcomingEvents = dataJson.filter((x) => Date.now() < new Date(x.date).getT
     </div>
     <div class='col'>
       <div class='textCell'>
-        <div class="textCellHeader">Спілкування та настільні ігри на віллі</div>
-        <div class="innerTextCell">
-          <div>Зустріч-знайомство, де ми поспілкуємось, граємо в ігри (мафія, уно, аліас, тощо) та просто гарно проведимо час</div>
-          <div class="textCellFooter">Ну і фоточки для соц.мереж, звісно, будуть йой най буде</div>
+        <div class='textCellHeader'>Спілкування та настільні ігри на віллі</div>
+        <div class='innerTextCell'>
+          <div>
+            Зустріч-знайомство, де ми поспілкуємось, граємо в ігри (мафія, уно, аліас, тощо) та просто гарно проведимо
+            час
+          </div>
+          <div class='textCellFooter'>Ну і фоточки для соц.мереж, звісно, будуть йой най буде</div>
         </div>
       </div>
     </div>
@@ -229,16 +228,19 @@ const upcomingEvents = dataJson.filter((x) => Date.now() < new Date(x.date).getT
     </div>
     <div class='col'>
       <div class='textCell'>
-        <div class="textCellHeader">Пляжний волейбол</div>
-        <div class="innerTextCell">
+        <div class='textCellHeader'>Пляжний волейбол</div>
+        <div class='innerTextCell'>
           <div>Пляж, сонце і волейбол!</div>
-          <div>Навички гри не важливі, адже у всіх різний досвід, головне - отримати задоволення від гри та зустрічі з новими друзями🤍</div>
-          <div class="textCellFooter">Ну і фоточки для соц.мереж, звісно, будуть йой</div>
+          <div>
+            Навички гри не важливі, адже у всіх різний досвід, головне - отримати задоволення від гри та зустрічі з
+            новими друзями🤍
+          </div>
+          <div class='textCellFooter'>Ну і фоточки для соц.мереж, звісно, будуть йой</div>
         </div>
       </div>
     </div>
   </div>
-  <div class="galleryLine2">
+  <div class='galleryLine2 desktop_flex'>
     <div class='col'>
       <div class='cell'>
         <img src={trip3} alt='trip3' class='cellPhoto' />
@@ -246,9 +248,12 @@ const upcomingEvents = dataJson.filter((x) => Date.now() < new Date(x.date).getT
     </div>
     <div class='col'>
       <div class='textCell'>
-        <div class="textCellHeader">Поїздки у наздвичайні місця ОАЕ</div>
-        <div class="innerTextCell">
-          <div>Якщо ви захотіли поїхати в такі нетривіальні місця, то велика ймовірність, що і попутники виявляться цікавими хлопцями - близькими вам за духом</div>
+        <div class='textCellHeader'>Поїздки у наздвичайні місця ОАЕ</div>
+        <div class='innerTextCell'>
+          <div>
+            Якщо ви захотіли поїхати в такі нетривіальні місця, то велика ймовірність, що і попутники виявляться
+            цікавими хлопцями - близькими вам за духом
+          </div>
         </div>
       </div>
     </div>
@@ -259,9 +264,91 @@ const upcomingEvents = dataJson.filter((x) => Date.now() < new Date(x.date).getT
     </div>
     <div class='col'>
       <div class='textCell'>
-        <div class="textCellHeader">Бізнес зустрічі та воркшопи</div>
-        <div class="innerTextCell">
-          <div>Наші зустрічі надають унікальну можливість обговорити тонкощі ведення бізнесу в ОАЕ та поділитися колективним досвідом. Незалежно від того, чи є ви власником бізнесу, ентузіастом стартапів, чи тим, хто прагне дослідити світ підприємництва, ця група є ідеальною платформою для налагодження контактів, навчання та розвитку.</div>
+        <div class='textCellHeader'>Бізнес зустрічі та воркшопи</div>
+        <div class='innerTextCell'>
+          <div>
+            Наші зустрічі надають унікальну можливість обговорити тонкощі ведення бізнесу в ОАЕ та поділитися
+            колективним досвідом. Незалежно від того, чи є ви власником бізнесу, ентузіастом стартапів, чи тим, хто
+            прагне дослідити світ підприємництва, ця група є ідеальною платформою для налагодження контактів, навчання
+            та розвитку.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='galleryLine2 mobile_flex'>
+    <div class='col'>
+      <div class='cell'>
+        <img src={trip1} alt='trip1' class='cellPhoto' />
+      </div>
+    </div>
+    <div class='col'>
+      <div class='textCell'>
+        <div class='textCellHeader'>Спілкування та настільні ігри на віллі</div>
+        <div class='innerTextCell'>
+          <div>
+            Зустріч-знайомство, де ми поспілкуємось, граємо в ігри (мафія, уно, аліас, тощо) та просто гарно проведимо
+            час
+          </div>
+          <div class='textCellFooter'>Ну і фоточки для соц.мереж, звісно, будуть йой най буде</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='galleryLine2 mobile_flex'>
+    <div class='col'>
+      <div class='cell'>
+        <img src={volleyball3} alt='volleyball3' class='cellPhoto' />
+      </div>
+    </div>
+    <div class='col'>
+      <div class='textCell'>
+        <div class='textCellHeader'>Пляжний волейбол</div>
+        <div class='innerTextCell'>
+          <div>Пляж, сонце і волейбол!</div>
+          <div>
+            Навички гри не важливі, адже у всіх різний досвід, головне - отримати задоволення від гри та зустрічі з
+            новими друзями🤍
+          </div>
+          <div class='textCellFooter'>Ну і фоточки для соц.мереж, звісно, будуть йой</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='galleryLine2 mobile_flex'>
+    <div class='col'>
+      <div class='cell'>
+        <img src={trip3} alt='trip3' class='cellPhoto' />
+      </div>
+    </div>
+    <div class='col'>
+      <div class='textCell'>
+        <div class='textCellHeader'>Поїздки у наздвичайні місця ОАЕ</div>
+        <div class='innerTextCell'>
+          <div>
+            Якщо ви захотіли поїхати в такі нетривіальні місця, то велика ймовірність, що і попутники виявляться
+            цікавими хлопцями - близькими вам за духом
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='galleryLine2 mobile_flex'>
+    <div class='col'>
+      <div class='cell'>
+        <img src={trip2} alt='trip2' class='cellPhoto' />
+      </div>
+    </div>
+    <div class='col'>
+      <div class='textCell'>
+        <div class='textCellHeader'>Бізнес зустрічі та воркшопи</div>
+        <div class='innerTextCell'>
+          <div>
+            Наші зустрічі надають унікальну можливість обговорити тонкощі ведення бізнесу в ОАЕ та поділитися
+            колективним досвідом. Незалежно від того, чи є ви власником бізнесу, ентузіастом стартапів, чи тим, хто
+            прагне дослідити світ підприємництва, ця група є ідеальною платформою для налагодження контактів, навчання
+            та розвитку.
+          </div>
         </div>
       </div>
     </div>
@@ -688,10 +775,16 @@ const upcomingEvents = dataJson.filter((x) => Date.now() < new Date(x.date).getT
     margin: 0px 20px;
     margin-top: 36px;
   }
-  .galleryLine, .galleryLine .col, .galleryLine .col2, .col05 {
+  .galleryLine,
+  .galleryLine .col,
+  .galleryLine .col2,
+  .col05 {
     height: 374px;
   }
-  .galleryLine2, .galleryLine2 .col, .galleryLine2 .col2, .galleryLine2 .col05 {
+  .galleryLine2,
+  .galleryLine2 .col,
+  .galleryLine2 .col2,
+  .galleryLine2 .col05 {
     height: 424px;
   }
   .mobile,
@@ -706,7 +799,7 @@ const upcomingEvents = dataJson.filter((x) => Date.now() < new Date(x.date).getT
       line-height: 45px;
       text-transform: uppercase;
       text-align: center;
-    } 
+    }
   }
   @media only screen and (max-width: 600px) {
     .headerBoard {
@@ -749,13 +842,19 @@ const upcomingEvents = dataJson.filter((x) => Date.now() < new Date(x.date).getT
       line-height: 76px;
     }
     .inner span {
-      width: 330px;
+      width: 360px;
     }
     .marquee {
       height: 76px;
     }
     .linkBoardWrapper span {
       font-size: 1.5em;
+    }
+    .textCellHeader {
+      font-size: 30px;
+      letter-spacing: 0.2px;
+      line-height: 26px;
+      font-weight: 600;
     }
     .mobile_flex {
       display: flex;
